@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -42,8 +43,8 @@ header {
 
 #background-video {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 1;
 }
 
@@ -65,7 +66,7 @@ a:hover {
 }
 
 #chat-container {
-    height: 80%
+    width: 100%;
     max-width: 450px;
     background-color: #ffffff;
     border-radius: 15px;
@@ -75,6 +76,8 @@ a:hover {
     flex-direction: column;
     flex-grow: 1;
     transition: box-shadow 0.3s ease;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 #output {
@@ -85,6 +88,7 @@ a:hover {
     position: relative;
     z-index: 2;
     background-color: rgba(255, 255, 255, 0.8);
+    max-height: calc(100vh - 150px);
 }
 
 #background-video {
