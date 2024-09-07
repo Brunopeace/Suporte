@@ -1,0 +1,225 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f1f8e9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #007BFF;
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #0056b3;
+    position: absolute;
+    z-index : 10;
+
+}
+
+.img-quadrada {
+    width: 300px;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 8px; /* (Opcional) */
+}
+
+
+#logo { max-width: 200px;
+        height: 200px;
+}
+
+#background-video {
+position: relative;
+width: 100vw;
+height: 100vh;
+z-index: 1;
+
+}
+
+a {
+    background: linear-gradient(45deg, #43A047, #66BB6A);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+    background: linear-gradient(45deg, #388E3C, #43A047);
+    color: #c8e6c9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#chat-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: box-shadow 0.3s ease;
+}
+
+#output {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#chat-container {
+    position: relative;
+    z-index: 3;
+    padding-top: 150px;
+}
+
+button {
+    position: relative;
+    z-index: 3;
+}
+
+#userInputContainer {
+    display: flex;
+    padding: 15px;
+    background: #eceff1;
+    border-top: 2px solid #ddd;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #b0bec5;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-left: -7px;
+    z-index : 3;
+}
+
+#userInput:focus {
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+#sendBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#sendBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#clearBtn {
+    background: #E53F51;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#clearBtn:hover {
+    background: #c62828;
+    transform: scale(1.05);
+}
+
+/* Efeito de entrada para mensagens do chatbot */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease-in-out;
+    animation: slideIn 0.5s ease-out;
+}
+
+.user-message {
+    background: #007BFF;
+    color: white;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    animation: slideIn 0.5s ease-out; /* Aplica o efeito às mensagens do usuário também */
+}
+
+.bot-message {
+    background: #eceff1;
+    color: #333;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    animation: slideIn 0.5s ease-out; /* Aplica o efeito às mensagens do bot */
+}
+
+/* Estilos responsivos */
+@media (max-width: 500px) {
+    #chat-container {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #userInput {
+        padding: 10px;
+    }
+
+    #sendBtn, #clearBtn {
+        padding: 10px;
+    }
+
+    .message {
+        padding: 12px;
+    }
+}
