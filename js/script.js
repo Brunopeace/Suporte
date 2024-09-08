@@ -119,6 +119,9 @@ userInput.includes("dns")) {
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
         return "Aqui esta seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
         
+        } else if (userInput.includes("painel")) {
+        return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";
+        
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
 userInput.includes("ativar")) {
         return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
