@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -37,14 +38,18 @@ header {
 
 #logo { 
     max-width: 200px;
-    height: 200px;
+    height: 180px;
 }
 
 #background-video {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
 }
 
 a {
@@ -70,13 +75,14 @@ a:hover {
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    transition: box-shadow 0.3s ease;
-    height: 100%;
-    max-height: 100vh;
+    justify-content: space-between; /* Mantém os botões e a caixa de input no final */
+    height: 100%; /* Ocupa toda a altura disponível */
+    max-height: 100vh; /* Evita que o chat cresça além da tela */
+    padding-top: 150px; /* Evita que o conteúdo fique muito baixo */
+    position: relative;
+    z-index: 3;
 }
 
 #output {
@@ -85,31 +91,7 @@ a:hover {
     overflow-y: auto;
     border-bottom: 1px solid #ddd;
     position: relative;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    max-height: calc(100vh -150px);
-}
-
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    pointer-events: none;
-}
-
-#chat-container {
-    position: relative;
-    z-index: 3;
-    padding-top: 150px;
-}
-
-button {
-    position: relative;
-    z-index: 3;
+    max-height: calc(100vh - 150px);
 }
 
 #userInputContainer {
@@ -117,17 +99,19 @@ button {
     padding: 15px;
     background: #eceff1;
     border-top: 2px solid #ddd;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
 }
 
 #userInput {
-    flex-grow: 1;
+    flex-grow: 3;
     padding: 12px;
     border: 1px solid #b0bec5;
     border-radius: 10px;
     outline: none;
     transition: border-color 0.3s ease;
-    margin-left: -7px;
-    z-index: 3;
+    margin-right: -17px;
 }
 
 #userInput:focus {
@@ -142,7 +126,7 @@ button {
     padding: 12px 18px;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: 4px;
+    margin-left: 19px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -157,7 +141,7 @@ button {
     border: none;
     border-radius: 10px;
     padding: 12px 18px;
-    margin-left: 5px;
+    margin-left: 2px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -192,7 +176,6 @@ button {
     color: white;
     align-self: flex-end;
     border-top-right-radius: 0;
-    animation: slideIn 0.5s ease-out;
 }
 
 .bot-message {
@@ -200,7 +183,10 @@ button {
     color: #333;
     align-self: flex-start;
     border-top-left-radius: 0;
-    animation: slideIn 0.5s ease-out;
+}
+
+.hidden-message {
+    display: none;
 }
 
 /* Estilos responsivos */
