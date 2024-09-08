@@ -72,7 +72,6 @@ a:hover {
 #chat-container {
     width: 100%;
     max-width: 450px;
-    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -80,16 +79,16 @@ a:hover {
     justify-content: space-between; /* Mantém os botões e a caixa de input no final */
     height: 100%; /* Ocupa toda a altura disponível */
     max-height: 100vh; /* Evita que o chat cresça além da tela */
-    padding-top: 150px; /* Evita que o conteúdo fique muito baixo */
+    padding-top: 100px; /* Evita que o conteúdo fique muito baixo */
     position: relative;
     z-index: 3;
 }
 
 #output {
+    font-weight: bold;
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
-    border-bottom: 1px solid #ddd;
     position: relative;
     max-height: calc(100vh - 150px);
 }
@@ -97,11 +96,10 @@ a:hover {
 #userInputContainer {
     display: flex;
     padding: 15px;
-    background: #eceff1;
-    border-top: 2px solid #ddd;
     position: sticky;
     bottom: 0;
-    z-index: 1;
+    z-index: 2;
+    margin-top: 100px;
 }
 
 #userInput {
