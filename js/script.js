@@ -128,6 +128,8 @@ userInput.includes("teste")) {
     // Saudações
     if (userInput.includes("bom dia")) {
         return "Bom dia! Como posso te ajudar?";
+    } else if (userInput.includes("ok")) {
+        return "Qualquer coisa é so falar. 👍😉";
     } else if (userInput.includes("boa tarde")) {
         return "Boa tarde! Em que posso te ajudar?";
     } else if (userInput.includes("boa noite")) {
