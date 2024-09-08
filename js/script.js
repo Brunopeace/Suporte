@@ -112,8 +112,9 @@ userInput.includes("parou de funcionar")) {
 userInput.includes("vendedor")) {
         return "Olá, temos painel de revenda comum e master. Caso queira ver os valores da nossa tabela de preço so digitar TABELA que te envio. ou se preferir clique no botão para falar com um dos nossos suporte.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20gostaria%20de%20ser%20revendedor*%20' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo")) {
-        return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick e Computador. 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
+    } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo") ||
+userInput.includes("dns")) {
+        return "Aqui você encontra todos os Nossos DNS aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
         return "Aqui esta seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
