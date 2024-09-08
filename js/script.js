@@ -79,6 +79,12 @@ userInput.includes("claro")) {
     } else if (userInput.includes("smartv") || userInput.includes("smart tv") || userInput.includes("smart")) {
         return "Certo. LG, Samsung ou ela é uma smartv android?";
         
+        } else if (userInput.includes("5 credito") || userInput.includes("amanha") || userInput.includes("amanhã") ||
+userInput.includes("10 credito") ||
+userInput.includes("20 credito") ||
+userInput.includes("recarregar")) {
+        return "Eu não tenho acesso ao seu painel, mais não se preocupe, fale com nosso suporte que ele vai te ajudar melhor nesse caso. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%20gostaria%20de%20recarregar%20meu%20painel*' target='_blank'>Clique aqui</a>";
+                
     } else if (userInput.includes("muito obrigado") || userInput.includes("obrigado") || userInput.includes("obrigada") || userInput.includes("obg")) {
         return "De nada, caso precise de mais alguma coisa, é só perguntar. 👍";
         
@@ -111,7 +117,7 @@ userInput.includes("vendedor")) {
         
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
 userInput.includes("ativar")) {
-        return "Ola, segue aqui meu PIX EMAIL: brunopeaceandlove60@gmail.com após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
+        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
         
         
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
