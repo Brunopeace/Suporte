@@ -115,6 +115,9 @@ userInput.includes("vendedor")) {
     } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo")) {
         return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick e Computador. 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
         
+        } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
+        return "Aqui esta seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
+        
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
 userInput.includes("ativar")) {
         return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
