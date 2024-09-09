@@ -1,5 +1,15 @@
 // Event Listener para o botão de envio
-document.getElementById("sendBtn").addEventListener("click", function () {
+document.getElementById("sendBtn").addEventListener("click", sendMessage);
+
+// Event Listener para o envio com a tecla Enter
+document.getElementById("userInput").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+});
+
+// Função para enviar a mensagem
+function sendMessage() {
     let userInput = document.getElementById("userInput").value;
     if (userInput) {
         appendMessage("user-message", userInput);
@@ -7,7 +17,7 @@ document.getElementById("sendBtn").addEventListener("click", function () {
         document.getElementById("userInput").value = "";
         saveMessages();
     }
-});
+}
 
 // Função para adicionar mensagens ao chat
 function appendMessage(className, message) {
@@ -39,6 +49,7 @@ function loadMessages() {
         document.getElementById("output").innerHTML = savedMessages;
     }
 }
+
 loadMessages(); // Carregar mensagens ao iniciar
 
 // Função para definir respostas do chatbot
@@ -71,12 +82,15 @@ userInput.includes("claro")) {
     } else if (userInput.includes("telefone") || userInput.includes("celular")) {
         return "SIM! Temos aplicativos disponíveis para Android e iOS.";
         
+        } else if (userInput.includes("quero testar")) {
+        return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+   
     } else if (userInput.includes("computador") || userInput.includes("pc")) {
         return "Sim, temos aplicativos para computador ou notebook.";
     } else if (userInput.includes("horário") || userInput.includes("suporte")) {
         return "Nosso atendimento é de segunda a domingo, das 9h às 23h.";
         
-    } else if (userInput.includes("smartv") || userInput.includes("smart tv") || userInput.includes("smart")) {
+    } else if (userInput.includes("smartv") || userInput.includes("smart tv")) {
         return "Certo. LG, Samsung ou ela é uma smartv android?";
         
         } else if (userInput.includes("5 credito") || userInput.includes("amanha") || userInput.includes("amanhã") ||
@@ -112,15 +126,17 @@ userInput.includes("parou de funcionar")) {
 userInput.includes("vendedor")) {
         return "Olá, temos painel de revenda comum e master. Caso queira ver os valores da nossa tabela de preço so digitar TABELA que te envio. ou se preferir clique no botão para falar com um dos nossos suporte.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20gostaria%20de%20ser%20revendedor*%20' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo") ||
-userInput.includes("dns")) {
-        return "Aqui você encontra todos os Nossos DNS aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
+    } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo")) {
+        return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
-        return "Aqui esta seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
+        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
         
         } else if (userInput.includes("painel")) {
         return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";
+        
+        } else if (userInput.includes("dns")) {
+        return "                                                                <span style='color: blue;'>📌DNS´s✅</span> <hr>      DNS XCLOUD: <br>                                         <span style='color: blue;'>Union10</span>         <hr>       DNS SMARTERS PLAYER: <br>                                      <span style='color: blue;'>http://xpn01.xyz</span>   <hr>                      DNS XCIPTV 1: <br>                                   <span style='color: blue;'>https://srv01.top</span>     <hr>                                                    DNS XCIPTV 2: <br>                                   <span style='color: blue;'>https://sr.xdriver01.xyz</span>                             <hr>                                                   DNS STB V3 BR: <br>                                                 <span style='color: blue;'>209.14.71.101</span>                                                             <hr>                                                         EPG: <br>                                                <span style='color: blue;'>https://abre.ai/u9epg1</span><hr>                                                                                   Webplayer: <br>                                          <span style='color: blue;'>http://unionplayer.xyz</span>              ";
         
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
 userInput.includes("ativar")) {
