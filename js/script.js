@@ -76,7 +76,7 @@ userInput.includes("claro")) {
     } else if (userInput.includes("quanto") || userInput.includes("custa")) {
         return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("aceita") || userInput.includes("pix")) {
+    } else if (userInput.includes("aceita pix")) {
         return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("telefone") || userInput.includes("celular")) {
@@ -115,7 +115,8 @@ userInput.includes("recarregar")) {
 userInput.includes("como funciona")) {
         return "Funciona da seguinte forma... você baixa o aplicativo no seu aparelho, seja ele Tvbox, Firestick ou Smartv. Te mandamos um usuário e senha com o teste de 6h de duração, caso goste, te enviamos os dados para pagamento via PIX. Já te adiantando, trabalhamos com esses planos. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("pagar") || userInput.includes("pago")) {
+    } else if (userInput.includes("pagar") || userInput.includes("pago") ||
+userInput.includes("pagamento")) {
         return "Após o teste caso voce goste, é so fazer o pagamento via PIX, após o pagamento fazemos a ativação de 30 dias, e dois dias antes de vencer te avisaremos.";
         
         } else if (userInput.includes("erro") || userInput.includes("parou") ||
@@ -139,7 +140,9 @@ userInput.includes("vendedor")) {
         return "                                                                <span style='color: blue;'>📌DNS´s✅</span> <hr>      DNS XCLOUD: <br>                                         <span style='color: blue;'>Union10</span>         <hr>       DNS SMARTERS PLAYER: <br>                                      <span style='color: blue;'>http://xpn01.xyz</span>   <hr>                      DNS XCIPTV 1: <br>                                   <span style='color: blue;'>https://srv01.top</span>     <hr>                                                    DNS XCIPTV 2: <br>                                   <span style='color: blue;'>https://sr.xdriver01.xyz</span>                             <hr>                                                   DNS STB V3 BR: <br>                                                 <span style='color: blue;'>209.14.71.101</span>                                                             <hr>                                                         EPG: <br>                                                <span style='color: blue;'>https://abre.ai/u9epg1</span><hr>                                                                                   Webplayer: <br>                                          <span style='color: blue;'>http://unionplayer.xyz</span>              ";
         
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
-userInput.includes("ativar")) {
+userInput.includes("ativar") ||
+userInput.includes("chave") ||
+userInput.includes("seu pix")) {
         return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
         
         
