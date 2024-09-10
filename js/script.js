@@ -69,13 +69,13 @@ userInput.includes("claro")) {
     // Respostas específicas
     if (userInput.includes("plano") || userInput.includes("planos") ||
 userInput.includes("pacote")) {
-        return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("valor") || userInput.includes("preço")) {
-        return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("quanto custa") || userInput.includes("custa")) {
-        return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("aceita pix")) {
         return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
@@ -91,7 +91,8 @@ userInput.includes("pacote")) {
         
     } else if (userInput.includes("tempo de teste") ||
         userInput.includes("quanto tempo de teste") ||
-        userInput.includes("qual a duração do teste")) {
+        userInput.includes("qual a duração do teste") ||
+        userInput.includes("quantas horas de teste")) {
         return "O teste tem uma duração de 6h.";
         
         } else if (userInput.includes("cancelar") || userInput.includes("política de cancelamento") || userInput.includes("posso cancelar")) {
@@ -123,6 +124,20 @@ userInput.includes("recarregar")) {
     } else if (userInput.includes("tvbox") || userInput.includes("tv box")) {
         return "Ok, escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
+        } else if (userInput.includes("compatível") || userInput.includes("tv")) {
+    return "Nosso serviço é compatível com a maioria das TVs Smart, Tvbox, Firestick, entre outros. Se quiser ter certeza, podemos te passar um teste gratuito de 6 horas.";
+        
+        
+        } else if (userInput.includes("velocidade") || userInput.includes("minima")) {
+    return "Recomendamos uma conexão de pelo menos 10 Mbps para que o serviço funcione sem interrupções.";
+} else if (userInput.includes("fhd") || userInput.includes("4k")) {
+    return "Sim, nosso serviço oferece conteúdo em 4K e FHD, desde que sua TV e conexão de Internet suportem essa resolução.";
+    
+    
+    
+    
+    
+        
     } else if (userInput.includes("informações") || userInput.includes("detalhes") ||
 userInput.includes("como funciona")) {
         return "Funciona da seguinte forma... você baixa o aplicativo no seu aparelho, seja ele Tvbox, Firestick ou Smartv. Te mandamos um usuário e senha com o teste de 6h de duração, caso goste, te enviamos os dados para pagamento via PIX. Já te adiantando, trabalhamos com esses planos. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
@@ -146,7 +161,7 @@ userInput.includes("vendedor")) {
         return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
         
         } else if (userInput.includes("painel")) {
-        return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";
+        return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";     
         
         } else if (userInput.includes("dns")) {
         return "                                                                <span style='color: blue;'>📌DNS´s✅</span> <hr>      DNS XCLOUD: <br>                                         <span style='color: blue;'>Union10</span>         <hr>       DNS SMARTERS PLAYER: <br>                                      <span style='color: blue;'>http://xpn01.xyz</span>   <hr>                      DNS XCIPTV 1: <br>                                   <span style='color: blue;'>https://srv01.top</span>     <hr>                                                    DNS XCIPTV 2: <br>                                   <span style='color: blue;'>https://sr.xdriver01.xyz</span>                             <hr>                                                   DNS STB V3 BR: <br>                                                 <span style='color: blue;'>209.14.71.101</span>                                                             <hr>                                                         EPG: <br>                                                <span style='color: blue;'>https://abre.ai/u9epg1</span><hr>                                                                                   Webplayer: <br>                                          <span style='color: blue;'>http://unionplayer.xyz</span>              ";
