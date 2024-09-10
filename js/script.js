@@ -59,12 +59,6 @@ function getBotResponse(userInput) {
     if (userInput.includes("tabela") || userInput.includes("tabela de preço")) {
     return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
     }
-    
-    if (userInput.includes("internet") || userInput.includes("vivo") ||
-userInput.includes("tim") ||
-userInput.includes("claro")) {
-    return "Clique no botão para baixar o aplicativo👉<a href='./downloads/techer-vivo.apk' download class='apk-link'>Clique aqui</a>";
-}
 
     // Respostas específicas
     if (userInput.includes("plano") || userInput.includes("planos") ||
@@ -83,8 +77,12 @@ userInput.includes("pacote")) {
     } else if (userInput.includes("telefone") || userInput.includes("celular")) {
         return "SIM! Temos aplicativos disponíveis para Android e iOS.";
         
-        } else if (userInput.includes("quero testar")) {
+    } else if (userInput.includes("quero testar")) {
         return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        
+    } else if (userInput.includes("como faço para testar") ||
+            userInput.includes("testar")) {
+        return "para testar é simples, entre na nossa pagina de planos, escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
         } else if (userInput.includes("como contratar") || userInput.includes("contratação") || userInput.includes("como faço para contratar")) {
         return "Você pode contratar nossos serviços diretamente pelo nosso suporte via WhatsApp. <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
@@ -130,13 +128,29 @@ userInput.includes("recarregar")) {
         
         } else if (userInput.includes("velocidade") || userInput.includes("minima")) {
     return "Recomendamos uma conexão de pelo menos 10 Mbps para que o serviço funcione sem interrupções.";
+    
 } else if (userInput.includes("fhd") || userInput.includes("4k")) {
     return "Sim, nosso serviço oferece conteúdo em 4K e FHD, desde que sua TV e conexão de Internet suportem essa resolução.";
     
+    } else if (userInput.includes("qualidade") || userInput.includes("imagem")) {
+    return "nosso serviço oferece conteúdos em SD, HD, FHD e 4K, dependendo do plano escolhido e da sua conexão de internet. Trabalhamos com esses planos: <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+    
+    } else if (userInput.includes("esqueci") || userInput.includes("senha") ||
+userInput.includes("usuario")) {
+    return "Caso tenha esquecido sua senha, podemos te ajudar a recuperá-la. Entre em contato com nosso suporte para receber as instruções.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Clique aqui</a>";
     
     
+    } else if (userInput.includes("sem internet") || userInput.includes("pega offline") ||
+userInput.includes("pega off-line")) {
+    return "Infelizmente, o aplicativo não funciona offline. Você precisa de uma conexão ativa à Internet para acessar o conteúdo.";
     
+    } else if (userInput.includes("bloquear") || userInput.includes("conteudo adulto") ||
+userInput.includes("conteúdos adultos") ||
+userInput.includes("remover")) {
+    return "Sim, você pode ativar o controle parental para bloquear conteúdo adulto. Basta acessar as configurações do aplicativo. ou entrar em contato com nosso suporte para que ele remova os conteúdos adultos. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20gostaria%20de%20remover%20os%20conte%C3%BAdos%20adultos*' target='_blank'>Clique aqui</a>";
     
+} else if (userInput.includes("preciso") || userInput.includes("atualizar app")) {
+    return "Recomendamos manter o aplicativo sempre atualizado para garantir a melhor experiência. Você será notificado sempre que houver uma nova versão.";
         
     } else if (userInput.includes("informações") || userInput.includes("detalhes") ||
 userInput.includes("como funciona")) {
@@ -171,7 +185,6 @@ userInput.includes("ativar") ||
 userInput.includes("chave") ||
 userInput.includes("seu pix")) {
         return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
-        
         
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
 userInput.includes("teste")) {
