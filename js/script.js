@@ -67,13 +67,14 @@ userInput.includes("claro")) {
 }
 
     // Respostas específicas
-    if (userInput.includes("plano") || userInput.includes("planos")) {
+    if (userInput.includes("plano") || userInput.includes("planos") ||
+userInput.includes("pacote")) {
         return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("valor") || userInput.includes("preço")) {
         return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("quanto") || userInput.includes("custa")) {
+    } else if (userInput.includes("quanto custa") || userInput.includes("custa")) {
         return "Trabalhamos com esses planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("aceita pix")) {
@@ -84,6 +85,17 @@ userInput.includes("claro")) {
         
         } else if (userInput.includes("quero testar")) {
         return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        
+        } else if (userInput.includes("como contratar") || userInput.includes("contratação") || userInput.includes("como faço para contratar")) {
+        return "Você pode contratar nossos serviços diretamente pelo nosso suporte via WhatsApp. <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        
+    } else if (userInput.includes("tempo de teste") ||
+        userInput.includes("quanto tempo de teste") ||
+        userInput.includes("qual a duração do teste")) {
+        return "O teste tem uma duração de 6h.";
+        
+        } else if (userInput.includes("cancelar") || userInput.includes("política de cancelamento") || userInput.includes("posso cancelar")) {
+        return "Sim, você pode cancelar a contratação a qualquer momento. Nossa política de cancelamento permite reembolso de até 30% do valor pago.";
    
     } else if (userInput.includes("computador") || userInput.includes("pc")) {
         return "Sim, temos aplicativos para computador ou notebook.";
