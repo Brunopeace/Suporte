@@ -113,18 +113,30 @@ userInput.includes("recarregar")) {
     } else if (userInput.includes("muito obrigado") || userInput.includes("obrigado") || userInput.includes("obrigada") || userInput.includes("obg")) {
         return "De nada, caso precise de mais alguma coisa, é só perguntar. 👍";
         
-        } else if (userInput.includes("funciona") || userInput.includes("aparelho") || userInput.includes("aparelhos")) {
+    } else if (userInput.includes("funciona") || userInput.includes("aparelho") || userInput.includes("aparelhos")) {
         return "Funciona na Smartv, tvbox, Firestick, Computador, celular e tablet.";
         
     } else if (userInput.includes("tudo bem") || userInput.includes("como vai") || userInput.includes("como você está")) {
         return "Tudo bem, melhor que nunca! 😉";
-        
+   
     } else if (userInput.includes("tvbox") || userInput.includes("tv box")) {
-        return "Ok, escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+    return `
+    Preencha o nome de usuário e senha que deseja para o suporte criar seu teste. Em observação, especifique para qual aparelho vai ser o teste, se é para Tvbox, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
+    <form id="testForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br><br>
         
+        <label for="message">Observação:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="button" onclick="sendFormToWhatsApp()">Enviar para WhatsApp</button>
+    </form>`;
+ 
         } else if (userInput.includes("compatível") || userInput.includes("tv")) {
     return "Nosso serviço é compatível com a maioria das TVs Smart, Tvbox, Firestick, entre outros. Se quiser ter certeza, podemos te passar um teste gratuito de 6 horas.";
-        
         
         } else if (userInput.includes("velocidade") || userInput.includes("minima")) {
     return "Recomendamos uma conexão de pelo menos 10 Mbps para que o serviço funcione sem interrupções.";
@@ -211,6 +223,22 @@ userInput.includes("teste")) {
     }
 
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
+}
+
+// Função para enviar o formulário para o WhatsApp
+function sendFormToWhatsApp() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var message = document.getElementById("message").value;
+
+    // Formate a mensagem que será enviada
+    var whatsappMessage = `*Usuário*: ${username}\n\n*Senha*: ${password}\n\n\n*Observação*: ${message}`;
+
+    var whatsappNumber = "5581982258462";
+    var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Abre o WhatsApp com a mensagem formatada
+    window.location.href = url;
 }
 
 // Função para limpar o chat
