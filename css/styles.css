@@ -1,3 +1,64 @@
+#testForm {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#testForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#testForm input[type="text"],
+#testForm input[type="password"],
+#testForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+#testForm input[type="text"]:focus,
+#testForm input[type="password"]:focus,
+#testForm textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#testForm textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+#testForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#testForm button:hover {
+    background-color: #0056b3;
+}
+
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f1f8e9;
