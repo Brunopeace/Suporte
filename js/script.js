@@ -127,12 +127,12 @@ userInput.includes("recarregar")) {
         <input type="text" id="username" name="username" required><br><br>
 
         <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="password" name="password" required maxlength="8"><br><br>
         
         <label for="message">Observação:</label>
-        <textarea id="message" name="message"></textarea><br><br>
+        <textarea id="message" name="message" required></textarea><br><br>
 
-        <button type="button" onclick="sendFormToWhatsApp()">Enviar para WhatsApp</button>
+        <button type="button" onclick="sendFormToWhatsApp()">Enviar para o Suporte</button>
     </form>`;
  
         } else if (userInput.includes("compatível") || userInput.includes("tv")) {
@@ -231,8 +231,13 @@ function sendFormToWhatsApp() {
     var password = document.getElementById("password").value;
     var message = document.getElementById("message").value;
 
-    // Formate a mensagem que será enviada
-    var whatsappMessage = `*Usuário*: ${username}\n\n*Senha*: ${password}\n\n\n*Observação*: ${message}`;
+    if (username === "" || password === "") {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    // Formata a mensagem que será enviada
+    var whatsappMessage = `*Usuário*: ${username}\n\n*Senha*: ${password}\n\n*Observação*: ${message}`;
 
     var whatsappNumber = "5581982258462";
     var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
