@@ -24,7 +24,7 @@ function appendMessage(className, message) {
     let output = document.getElementById("output");
     let messageDiv = document.createElement("div");
     messageDiv.className = "message " + className;
-    messageDiv.innerHTML = message;
+    messageDiv.innerHTML = message.replace(/\n/g, "<br>");  // Mantém quebras de linha
     output.appendChild(messageDiv);
     output.scrollTop = output.scrollHeight;
 }
@@ -208,7 +208,7 @@ userInput.includes("teste")) {
         return "Você usa Tvbox ou Smartv?";
         
     } else if (userInput.includes("android") || userInput.includes("panasonic")) {
-        return "Certo. Na sua smartv android, baixe o aplicativo ntDown na Playstore. Depois de baixado abra ele e entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar um código para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
+        return "Certo. Na sua smartv android, baixe o aplicativo ntDown na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: blue;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixa o aplicativo iptv smartes player ou o XCloud. Depois de baixado abra ele e entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
