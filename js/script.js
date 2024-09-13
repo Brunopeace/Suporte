@@ -31,9 +31,14 @@ function appendMessage(className, message) {
 
 // Função para responder com o chatbot
 function chatbotResponse(userInput) {
-    let response = getBotResponse(userInput);
-    appendMessage("bot-message", response);
-    saveMessages();
+    appendMessage("bot-message", "Escrevendo...");
+
+    setTimeout(function() {
+        let response = getBotResponse(userInput);
+        let messages = document.getElementsByClassName("bot-message");
+        messages[messages.length - 1].innerHTML = response; // Substitui a mensagem "Escrevendo..."
+        saveMessages();
+    }, 1500); // Delay de 1.5s
 }
 
 // Função para salvar mensagens no localStorage
