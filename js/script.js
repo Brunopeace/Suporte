@@ -69,29 +69,29 @@ function getBotResponse(userInput) {
     if (userInput.includes("plano") || userInput.includes("planos") ||
 userInput.includes("pacote") ||
 userInput.includes("pacotes")) {
-        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("valor") || userInput.includes("preço")) {
-        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("quanto custa") || userInput.includes("custa")) {
-        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Oferecemos diferentes planos de acordo com a quantidade de canais e qualidade de vídeo. Veja nossos planos: 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("aceita pix")) {
-        return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("teste para telefone") || userInput.includes("teste para celular")) {
         return "Ok. Se seu celular for <span style='color: red;'>Android</span> Clique no botão para baixar o aplicativo.<br>👉<a href='http://dl.ntdev.in/25563' target='_blank'>App android</a><br><br>Agora se for iPhone va na loja de aplicativos e baixe o aplicativo <br><span style='color: blue;'>iptv smarters player</span><br><br>";
         
     } else if (userInput.includes("quero testar")) {
-        return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("como faço para testar") ||
             userInput.includes("testar")) {
-        return "para testar é simples, entre na nossa pagina de planos, escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "para testar é simples, entre na nossa pagina de planos, escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
         } else if (userInput.includes("como contratar") || userInput.includes("contratação") || userInput.includes("como faço para contratar")) {
-        return "Você pode contratar nossos serviços diretamente pelo nosso suporte via WhatsApp. <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Você pode contratar nossos serviços diretamente pelo nosso suporte via WhatsApp. <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("tempo de teste") ||
         userInput.includes("quanto tempo de teste") ||
@@ -153,11 +153,11 @@ userInput.includes("recarregar")) {
     return "Sim, nosso serviço oferece conteúdo em 4K e FHD, desde que sua TV e conexão de Internet suportem essa resolução.";
     
     } else if (userInput.includes("qualidade") || userInput.includes("imagem")) {
-    return "nosso serviço oferece conteúdos em SD, HD, FHD e 4K, dependendo do plano escolhido e da sua conexão de internet. Trabalhamos com esses planos: <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+    return "nosso serviço oferece conteúdos em SD, HD, FHD e 4K, dependendo do plano escolhido e da sua conexão de internet. Trabalhamos com esses planos: <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
     
     } else if (userInput.includes("esqueci") || userInput.includes("senha") ||
 userInput.includes("usuario")) {
-    return "Caso tenha esquecido sua senha, podemos te ajudar a recuperá-la. Entre em contato com nosso suporte para receber as instruções.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Clique aqui</a>";
+    return "Caso tenha esquecido sua senha, podemos te ajudar a recuperá-la. Entre em contato com nosso suporte para receber as instruções.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Receber minha senha</a>";
     
     
     } else if (userInput.includes("sem internet") || userInput.includes("pega offline") ||
@@ -174,7 +174,7 @@ userInput.includes("remover")) {
         
     } else if (userInput.includes("informações") || userInput.includes("detalhes") ||
 userInput.includes("como funciona")) {
-        return "Funciona da seguinte forma... você baixa o aplicativo no seu aparelho, seja ele Tvbox, Firestick ou Smartv. Te mandamos um usuário e senha com o teste de 6h de duração, caso goste, te enviamos os dados para pagamento via PIX. Já te adiantando, trabalhamos com esses planos. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
+        return "Funciona da seguinte forma... você baixa o aplicativo no seu aparelho, seja ele Tvbox, Firestick ou Smartv. Te mandamos um usuário e senha com o teste de 6h de duração, caso goste, te enviamos os dados para pagamento via PIX. Já te adiantando, trabalhamos com esses planos. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
         
     } else if (userInput.includes("pagar") || userInput.includes("pago") ||
 userInput.includes("pagamento")) {
@@ -189,10 +189,10 @@ userInput.includes("vendedor")) {
         return "Olá, temos painel de revenda comum e master. Caso queira ver os valores da nossa tabela de preço so digitar TABELA que te envio. ou se preferir clique no botão para falar com um dos nossos suporte.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20gostaria%20de%20ser%20revendedor*%20' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("aplicativos") || userInput.includes("loja") || userInput.includes("aplicativo")) {
-        return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Clique aqui</a>";
+        return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Loja de aplicativos</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
-        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span>";
+        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";
         
         } else if (userInput.includes("painel")) {
         return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";     
@@ -204,17 +204,17 @@ userInput.includes("vendedor")) {
 userInput.includes("ativar") ||
 userInput.includes("chave") ||
 userInput.includes("seu pix")) {
-        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Clique aqui</a>";
+        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Enviar comprovante</a>";
         
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
 userInput.includes("teste")) {
         return "Você usa Tvbox ou Smartv?";
         
     } else if (userInput.includes("android") || userInput.includes("panasonic")) {
-        return "Certo. Na sua smartv android, baixe o aplicativo ntDown na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: blue;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
+        return "Certo. Na sua smartv android, baixe o aplicativo ntDown na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: blue;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
         
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
-        return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e coloque: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
+        return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e coloque: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
     }
     
     // Saudações
@@ -252,7 +252,7 @@ function sendFormToWhatsApp() {
     var whatsappNumber = "5581982258462";
     var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Abre o WhatsApp com a mensagem formatada
+    
     window.location.href = url;
 }
 
