@@ -80,8 +80,8 @@ userInput.includes("pacotes")) {
     } else if (userInput.includes("aceita pix")) {
         return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
         
-    } else if (userInput.includes("telefone") || userInput.includes("celular")) {
-        return "SIM! Temos aplicativos disponíveis para Android e iOS.";
+    } else if (userInput.includes("teste para telefone") || userInput.includes("teste para celular")) {
+        return "Ok. Se seu celular for <span style='color: red;'>Android</span> Clique no botão para baixar o aplicativo.<br>👉<a href='http://dl.ntdev.in/25563' target='_blank'>App android</a><br><br>Agora se for iPhone va na loja de aplicativos e baixe o aplicativo <br><span style='color: blue;'>iptv smarters player</span><br><br>";
         
     } else if (userInput.includes("quero testar")) {
         return "escolha seu plano para um teste de 6h. Assim que você escolher você será redirecionado para o suporte através do nosso WhatsApp, la ele vai te passar o aplicativo certo para seu aparelho.👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Clique aqui</a>";
@@ -102,7 +102,9 @@ userInput.includes("pacotes")) {
         } else if (userInput.includes("cancelar") || userInput.includes("política de cancelamento") || userInput.includes("posso cancelar")) {
         return "Sim, você pode cancelar a contratação a qualquer momento. Nossa política de cancelamento permite reembolso de até 30% do valor pago.";
    
-    } else if (userInput.includes("computador") || userInput.includes("pc")) {
+    } else if (userInput.includes("computador") || userInput.includes("pc") ||
+userInput.includes("notbook") ||
+userInput.includes("netbook")) {
         return "Sim, temos aplicativos para computador ou notebook.";
     } else if (userInput.includes("horário") || userInput.includes("suporte")) {
         return "Nosso atendimento é de segunda a domingo, das 9h às 23h.";
@@ -127,7 +129,7 @@ userInput.includes("recarregar")) {
    
     } else if (userInput.includes("tvbox") || userInput.includes("tv box")) {
     return `
-    Preencha o nome de usuário e senha que deseja para o suporte criar seu teste. Em observação, especifique para qual aparelho vai ser o teste, se é para Tvbox, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
+    Preencha o nome de usuário e senha da sua preferência para o suporte criar seu teste. Se o teste não for para Tvbox Especifique isso em observação, para qual aparelho vai ser o teste, se é para Tvbox, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
     <form id="testForm">
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -212,19 +214,21 @@ userInput.includes("teste")) {
         return "Certo. Na sua smartv android, baixe o aplicativo ntDown na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: blue;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
         
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
-        return "Ok. entre na loja de aplicativos e baixa o aplicativo iptv smartes player ou o XCloud. Depois de baixado abra ele e entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
+        return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e coloque: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>Clique aqui</a>";
     }
     
     // Saudações
     if (userInput.includes("bom dia")) {
         return "Bom dia! Como posso te ajudar?";
-    } else if (userInput.includes("ok")) {
+    } else if (userInput.includes("ok") ||
+               userInput.includes("blz")) {
         return "Qualquer coisa é so falar. 👍😉";
     } else if (userInput.includes("boa tarde")) {
         return "Boa tarde! Em que posso te ajudar?";
     } else if (userInput.includes("boa noite")) {
         return "Boa noite! Como posso te ajudar?";
-    } else if (userInput.includes("olá") || userInput.includes("ola") || userInput.includes("oi")) {
+    } else if (userInput.includes("olá") || userInput.includes("ola") ||
+userInput.includes("oi")) {
         return "Olá! Como posso te ajudar?";
     }
 
