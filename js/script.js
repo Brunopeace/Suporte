@@ -127,14 +127,14 @@ userInput.includes("recarregar")) {
         return "De nada, caso precise de mais alguma coisa, é só perguntar. 👍";
         
     } else if (userInput.includes("funciona") || userInput.includes("aparelho") || userInput.includes("aparelhos")) {
-        return "Funciona na Smartv, tvbox, Firestick, Computador, celular e tablet.";
+        return "Funciona na Smartv-android, tvbox, Firestick, Computador, celular e tablet.";
         
     } else if (userInput.includes("tudo bem") || userInput.includes("como vai") || userInput.includes("como você está")) {
         return "Tudo bem, melhor que nunca! 😉";
    
     } else if (userInput.includes("tvbox") || userInput.includes("tv box")) {
     return `
-    Preencha o nome de usuário e senha da sua preferência para o suporte criar seu teste. Se o teste não for para Tvbox Especifique isso em observação, para qual aparelho vai ser o teste, se é para Tvbox, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
+    Preencha o nome de usuário e senha da sua preferência para o suporte criar seu teste. Se o teste não for para Tvbox Especifique isso em observação, para qual aparelho vai ser o teste, se é para Tvbox, firestick, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
     <form id="testForm">
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -209,11 +209,14 @@ userInput.includes("vendedor")) {
 userInput.includes("ativar") ||
 userInput.includes("chave") ||
 userInput.includes("seu pix")) {
-        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Enviar comprovante</a>";
+        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> ou Pix Celular: <span style='color: red;'>81982258462</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Enviar comprovante</a>";
         
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
 userInput.includes("teste")) {
-        return "Você usa Tvbox ou Smartv?";
+        return "Você usa Tvbox, Firestick ou Smartv?";
+        
+    } else if (userInput.includes("firestick") || userInput.includes("firestik")) {
+        return "Certo. No seu Firestick baixe o aplicativo, <span style='color: blue;'>Downloader</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>103582</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
         
     } else if (userInput.includes("android") || userInput.includes("panasonic")) {
         return "Certo. Na sua smartv android, baixe o aplicativo <span style='color: blue;'>ntDown</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
