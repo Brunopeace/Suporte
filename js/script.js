@@ -57,15 +57,176 @@ function loadMessages() {
 
 loadMessages(); // Carregar mensagens ao iniciar
 
+const chaveSecreta = "x2V7hJd8Fg9BzP1nQ5rWk0cYtA3LmSs";
+
+// Função para criptografar dados
+function criptografar(dados) {
+    return CryptoJS.AES.encrypt(dados, chaveSecreta).toString();
+}
+
+// Função para descriptografar dados
+function descriptografar(dadosCriptografados) {
+    let bytes = CryptoJS.AES.decrypt(dadosCriptografados, chaveSecreta);
+    return bytes.toString(CryptoJS.enc.Utf8);
+}
+
+// Simulação de um banco de dados de clientes com usuário e telefone (dados criptografados)
+const clientes = {
+    "bruno2018": { 
+        "senha": criptografar("1234567890"), 
+        "telefone": "5581982258462" 
+    },
+    "joao20190": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5511980778049" 
+    },
+    "eliezer2019": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5581998575267"
+    },
+    "binho2020": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5581997921351"
+    },
+    "helton2018": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5548999886522"
+    },
+    "dero2020": { 
+        "senha": criptografar("202300"), 
+        "telefone": "5581991764549"
+    },
+    "danielmoura2019": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5516991699237"
+    },
+    "raphael2019": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5521986908924"
+    },
+    "ivan2022": { 
+        "senha": criptografar("202300"), 
+        "telefone": "5551991323090"
+    },
+    "roge2018": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5584987805002"
+    },
+    "ivo2019": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5588996840279"
+    },
+    "Ademir2018": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5511950594663"
+    },
+    "paulino2020": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5571997186022"
+    },
+    "jhonatan2018": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5568992458463"
+    },
+    "jonessantos2018": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5571988484259"
+    },
+    "danilo2018": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5521983028439"
+    },
+    "fitinha2019": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5521970124039"
+    },
+    "moacir2019": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5547992591655"
+    },
+    "Julioyoung": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5581989994462"
+    },
+    "euricos2018": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5518998203350"
+    },
+    "henrique20190": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5521991672201"
+    },
+    
+};
+
+// Variáveis para armazenar o estado da conversa
+let aguardandoUsuario = false;
+let aguardandoTelefone = false;
+let usuarioInformado = "";
+
+// Função para responder com o chatbot
+function chatbotResponse(userInput) {
+    appendMessage("bot-message", "Escrevendo...");
+
+    setTimeout(function() {
+        let response = getBotResponse(userInput);
+        let messages = document.getElementsByClassName("bot-message");
+        messages[messages.length - 1].innerHTML = response; // Substitui a mensagem "Escrevendo..."
+        saveMessages();
+    }, 1500); // Delay de 1.5s
+}
+
 // Função para definir respostas do chatbot
 function getBotResponse(userInput) {
     userInput = userInput.trim().toLowerCase();
 
-    if (userInput.includes("tabela") || userInput.includes("tabela de preço")) {
-    return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
+    // Verifica se o cliente está no processo de recuperação de senha
+    if (aguardandoUsuario) {
+        usuarioInformado = userInput; // Armazena o nome de usuário
+        aguardandoUsuario = false;
+        aguardandoTelefone = true;
+        return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. exemplo: <span style='color: blue;'>5581988776655</span>";
     }
 
-    // Respostas específicas
+    if (aguardandoTelefone) {
+        aguardandoTelefone = false;
+
+        // Verifica se o nome de usuário existe no banco de dados
+        if (clientes[usuarioInformado]) {
+            let cliente = clientes[usuarioInformado];
+            // Verifica se o telefone informado corresponde ao do banco de dados
+            if (cliente.telefone === userInput) {
+                // Descriptografa a senha antes de enviar
+                let senhaDescriptografada = descriptografar(cliente.senha);
+                
+                // Simula o envio das informações de usuário e senha
+                let whatsappLink = `https://wa.me/${cliente.telefone}?text=Link%20de%20acesso%20ao%20painel:%20https://cms-web.getme.skin/%0A%0A%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
+                return `As informações estão corretas. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
+            } else {
+                return "O telefone informado não corresponde ao usuário fornecido. Limpe a Conversa e atualize a página e tente novamente, ou entre em contato com o suporte caso você não saiba o nome de usuário do seu painel.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
+            }
+        } else {
+            return "Nome de usuário desconhecido. Limpe a Conversa e atualize a página e tente novamente, ou entre em contato com o suporte caso você não saiba o nome de usuário do seu painel.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
+        }
+    }
+
+    // Verifica se a palavra-chave para recuperação de senha foi mencionada
+   if (userInput.includes("esqueci a senha do painel") ||
+       userInput.includes("senha do painel") ||
+       userInput.includes("senha de acesso ao painel") ||
+       userInput.includes("esqueci minha senha de acesso ao painel") ||
+     userInput.includes("gostaria da senha do painel") ||
+     userInput.includes("poderia me enviar a senha do meu painel") ||
+     userInput.includes("esqueci meu login do painel")) {
+        aguardandoUsuario = true;
+        return "Para recuperar seu usuário e senha do seu painel, por favor informe seu nome de usuário.";
+    }
+
+    /// Outras respostas específicas
+    if (userInput.includes("tabela") || userInput.includes("tabela de preço")) {
+        return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
+    }
+
     if (userInput.includes("plano") || userInput.includes("planos") ||
 userInput.includes("pacote") ||
 userInput.includes("pacotes")) {
@@ -79,9 +240,6 @@ userInput.includes("pacotes")) {
         
     } else if (userInput.includes("aceita pix")) {
         return "Sim. Mais antes do pagamento gostariamos de te mandar um teste pra ver se vai funcionar direitinho no seu aparelho. Escolha um dos planos para voce fazer um teste de 6h de duração. <br>👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Ver planos</a>";
-        
-        
-        
         
     } else if (userInput.includes("teste para telefone") || userInput.includes("teste para celular") ||
    userInput.includes("quero um teste para meu celular")) {
@@ -159,11 +317,6 @@ userInput.includes("recarregar")) {
     
     } else if (userInput.includes("qualidade") || userInput.includes("imagem")) {
     return "nosso serviço oferece conteúdos em SD, HD, FHD e 4K, dependendo do plano escolhido e da sua conexão de internet. Trabalhamos com esses planos: <br> 👉<a href='https://brunopeace.github.io/plano/' target='_blank'>Planos</a>";
-    
-    } else if (userInput.includes("esqueci") || userInput.includes("senha") ||
-userInput.includes("usuario")) {
-    return "Caso tenha esquecido sua senha, podemos te ajudar a recuperá-la. Entre em contato com nosso suporte para receber as instruções.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Receber minha senha</a>";
-    
     
     } else if (userInput.includes("sem internet") || userInput.includes("pega offline") ||
 userInput.includes("pega off-line")) {
