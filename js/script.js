@@ -156,6 +156,10 @@ const clientes = {
         "senha": criptografar("202400"), 
         "telefone": "5521991672201"
     },
+    "nando2018": { 
+        "senha": criptografar("202500"), 
+        "telefone": "5547989095746"
+    },
     
 };
 
@@ -351,6 +355,13 @@ userInput.includes("vendedor")) {
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
         return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";
+        
+        
+        } else if (userInput.includes("esqueci a senha") || userInput.includes("senha") ||
+userInput.includes("usuario") ||
+userInput.includes("usuário") ||
+userInput.includes("esqueci meu usuario e senha")) {
+    return "Caso tenha esquecido sua senha do aplicativo, podemos te ajudar a recuperá-la. Entre em contato com nosso suporte para receber as instruções.<br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
         
         } else if (userInput.includes("painel")) {
         return "você ja é nosso revendedor? digite <span style='color: blue;'>link do painel</span> que te envio, caso nao seja e quer ser um revendedor digite <span style='color: blue;'>revendedor</span>";     
