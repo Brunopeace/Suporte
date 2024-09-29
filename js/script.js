@@ -160,6 +160,10 @@ const clientes = {
         "senha": criptografar("202500"), 
         "telefone": "5547989095746"
     },
+    "adriano2020": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5571988023878"
+    },
     
 };
 
