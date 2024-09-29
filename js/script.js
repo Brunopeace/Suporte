@@ -168,18 +168,6 @@ let aguardandoUsuario = false;
 let aguardandoTelefone = false;
 let usuarioInformado = "";
 
-// Função para responder com o chatbot
-function chatbotResponse(userInput) {
-    appendMessage("bot-message", "Escrevendo...");
-
-    setTimeout(function() {
-        let response = getBotResponse(userInput);
-        let messages = document.getElementsByClassName("bot-message");
-        messages[messages.length - 1].innerHTML = response; // Substitui a mensagem "Escrevendo..."
-        saveMessages();
-    }, 1500); // Delay de 1.5s
-}
-
 // Função para definir respostas do chatbot
 function getBotResponse(userInput) {
     userInput = userInput.trim().toLowerCase();
@@ -205,7 +193,7 @@ function getBotResponse(userInput) {
                 
                 // Simula o envio das informações de usuário e senha
                 let whatsappLink = `https://wa.me/${cliente.telefone}?text=Link%20de%20acesso%20ao%20painel:%20https://cms-web.getme.skin/%0A%0A%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
-                return `As informações estão corretas. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
+                return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
             } else {
                 return "O telefone informado não corresponde ao usuário fornecido. Limpe a Conversa e atualize a página e tente novamente, ou entre em contato com o suporte caso você não saiba o nome de usuário do seu painel.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
             }
