@@ -70,7 +70,7 @@ function descriptografar(dadosCriptografados) {
     return bytes.toString(CryptoJS.enc.Utf8);
 }
 
-// Simulação de um banco de dados de clientes com usuário e telefone (dados criptografados)
+// Banco de dados de clientes para recuperação de senha
 const clientes = {
     "bruno2018": { 
         "senha": criptografar("1234567890"), 
@@ -164,13 +164,77 @@ const clientes = {
         "senha": criptografar("202400"), 
         "telefone": "5571988023878"
     },
+    // Outros clientes omitidos para brevidade...
+};
+
+// Banco de dados separado para verificar a data de vencimento dos clientes
+const clientesVencimento = {
+    "anthony2024": {
+        "vencimento": "30/09/2024",
+        "telefone": "5581996685782"
+    },
+    "117nvd6": {
+        "vencimento": "30/09/2023",
+        "telefone": "5521987883629"
+    },
+    "64672h3": {
+        "vencimento": "30/09/2023",
+        "telefone": "5571992336681"
+    },
+    "6829636": {
+        "vencimento": "13/10/2024",
+        "telefone": "5547988186298"
+    },
+    "78276538": {
+        "vencimento": "03/10/2024",
+        "telefone": "5521994532922"
+    },
+    "606hk208": {
+        "vencimento": "08/10/2024",
+        "telefone": "5521998564510"
+    },
+    "505gw152": {
+        "vencimento": "06/10/2024",
+        "telefone": "5564993421250"
+    },
+    "31c5o4": {
+        "vencimento": "08/10/2024",
+        "telefone": "5581999224378"
+    },
+    "5hj8r97": {
+        "vencimento": "11/11/2024",
+        "telefone": "5551998421757"
+    },
+    "01919172": {
+        "vencimento": "01/10/2024",
+        "telefone": "5581987465583"
+    },
+    "68265785": {
+        "vencimento": "23/10/2024",
+        "telefone": "5551999013439"
+    },
+    "914460": {
+        "vencimento": "29/09/2024",
+        "telefone": "5581987903583"
+    },
     
+    // Outros clientes omitidos para brevidade...
 };
 
 // Variáveis para armazenar o estado da conversa
 let aguardandoUsuario = false;
 let aguardandoTelefone = false;
+let consultandoVencimento = false;
 let usuarioInformado = "";
+
+// Função para converter uma data no formato dd/mm/yyyy para um objeto Date
+function converterData(dataString) {
+    const partes = dataString.split('/');
+    const dia = parseInt(partes[0], 10);
+    const mes = parseInt(partes[1], 10) - 1; // Os meses em JavaScript são indexados de 0 a 11
+    const ano = parseInt(partes[2], 10);
+    return new Date(ano, mes, dia);
+}
 
 // Função para definir respostas do chatbot
 function getBotResponse(userInput) {
@@ -181,48 +245,81 @@ function getBotResponse(userInput) {
         usuarioInformado = userInput; // Armazena o nome de usuário
         aguardandoUsuario = false;
         aguardandoTelefone = true;
-        return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. exemplo: <span style='color: blue;'>5581988776655</span>";
+        return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. Exemplo: <span style='color: blue;'>5581988776655</span>";
     }
 
     if (aguardandoTelefone) {
         aguardandoTelefone = false;
 
-        // Verifica se o nome de usuário existe no banco de dados
-        if (clientes[usuarioInformado]) {
-            let cliente = clientes[usuarioInformado];
+        // Verifica se o nome de usuário existe no banco de dados de clientes
+        if (clientes[usuarioInformado] || clientesVencimento[usuarioInformado]) {
+            let cliente = clientes[usuarioInformado] || clientesVencimento[usuarioInformado];
             // Verifica se o telefone informado corresponde ao do banco de dados
             if (cliente.telefone === userInput) {
-                // Descriptografa a senha antes de enviar
-                let senhaDescriptografada = descriptografar(cliente.senha);
+                // Se estiver consultando vencimento
+                if (consultandoVencimento) {
+                    if (clientesVencimento[usuarioInformado]) {
+                        let dataAtual = new Date();
+                        let dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
+
+if (dataAtual > dataVencimento) {
+return `A assinatura deste usuário está vencida desde <span class="data-vencimento">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+       } else {
+    return `A sua assinatura está válida até o dia <span class="data-vencimento">${clientesVencimento[usuarioInformado].vencimento}</span>.`;
+}
+                 
+} else {
+return "Não foi possível encontrar informações de vencimento para este cliente.";
+                    }
+                }                     
+
+                if (clientes[usuarioInformado]) {
+                    let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
+                    let whatsappLink = `https://wa.me/${cliente.telefone}?text=Link%20de%20acesso%20ao%20painel:%20https://cms-web.getme.skin/%0A%0A%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
+                    return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
+          }
                 
-                // Simula o envio das informações de usuário e senha
-                let whatsappLink = `https://wa.me/${cliente.telefone}?text=Link%20de%20acesso%20ao%20painel:%20https://cms-web.getme.skin/%0A%0A%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
-                return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
             } else {
-                return "O telefone informado não corresponde ao usuário fornecido. Limpe a Conversa e atualize a página e tente novamente, ou entre em contato com o suporte caso você não saiba o nome de usuário do seu painel.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
+                return "O telefone informado não corresponde ao usuário fornecido. Limpe a conversa e atualize a página, e tente novamente, ou entre em contato com o suporte.";
             }
         } else {
-            return "Nome de usuário desconhecido. Limpe a Conversa e atualize a página e tente novamente, ou entre em contato com o suporte caso você não saiba o nome de usuário do seu painel.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20esqueci%20meu%20usu%C3%A1rio%20e%20senha%2C%20poderia%20me%20enviar%20por%20favor%20%3F*' target='_blank'>Suporte</a>";
+            return "Nome de usuário desconhecido. Limpe a conversa e atualize a página, e tente novamente, ou entre em contato com o suporte.👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>";
         }
     }
 
     // Verifica se a palavra-chave para recuperação de senha foi mencionada
-   if (userInput.includes("esqueci a senha do painel") ||
-       userInput.includes("senha do painel") ||
-       userInput.includes("senha de acesso ao painel") ||
-       userInput.includes("esqueci minha senha de acesso ao painel") ||
-     userInput.includes("gostaria da senha do painel") ||
-     userInput.includes("poderia me enviar a senha do meu painel") ||
-     userInput.includes("esqueci meu login do painel")) {
+    if (userInput.includes("esqueci a senha do painel") || userInput.includes("senha do painel") || userInput.includes("esqueci minha senha de acesso ao painel")) {
         aguardandoUsuario = true;
         return "Para recuperar seu usuário e senha do seu painel, por favor informe seu nome de usuário.";
     }
 
-    /// Outras respostas específicas
-    if (userInput.includes("tabela") || userInput.includes("tabela de preço")) {
-        return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
+    // Verifica se a palavra-chave para consulta de vencimento foi mencionada
+    if (userInput.includes("consultar vencimento") || userInput.includes("data de vencimento") || userInput.includes("quando vence minha assinatura")) {
+        aguardandoUsuario = true;
+        consultandoVencimento = true;
+        return "Para consultar a data de vencimento da sua assinatura, por favor informe seu nome de usuário.";
     }
 
+    if (userInput.includes("tabela") || userInput.includes("tabela de preço") ||
+        userInput.includes("tabela de credito")) {
+        return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
+    }
+    
+    // Saudações
+    if (userInput.includes("bom dia")) {
+        return "Bom dia! Como posso te ajudar?";
+    } else if (userInput.includes("ok") ||
+               userInput.includes("blz")) {
+        return "Qualquer coisa é so falar. 👍😉";
+    } else if (userInput.includes("boa tarde")) {
+        return "Boa tarde! Em que posso te ajudar?";
+    } else if (userInput.includes("boa noite")) {
+        return "Boa noite! Como posso te ajudar?";
+    } else if (userInput.includes("olá") || userInput.includes("ola") ||
+userInput.includes("oi")) {
+        return "Olá! Como posso te ajudar?";
+    }
+    
     if (userInput.includes("plano") || userInput.includes("planos") ||
 userInput.includes("pacote") ||
 userInput.includes("pacotes")) {
@@ -297,7 +394,7 @@ userInput.includes("recarregar")) {
         <input type="password" id="password" name="password" required maxlength="8"><br><br>
         
         <label for="message">Observação:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
+        <textarea id="message" name="message" placeholder="Exe: Teste para Tvbox" required></textarea><br><br>
 
         <button type="button" onclick="sendFormToWhatsApp()">Enviar para o Suporte</button>
     </form>`;
@@ -360,7 +457,7 @@ userInput.includes("esqueci meu usuario e senha")) {
         
         } else if (userInput.includes("dns")) {
         return "                                                                <span style='color: red;'>📌DNS´s✅</span> <hr>      DNS XCLOUD: <br>                                         <span style='color: blue;'>Union10</span>         <hr>       DNS SMARTERS PLAYER: <br>                                      <span style='color: blue;'>http://xpn01.xyz</span>   <hr>                      DNS XCIPTV 1: <br>                                   <span style='color: blue;'>https://srv01.top</span>     <hr>                                                    DNS XCIPTV 2: <br>                                   <span style='color: blue;'>https://sr.xdriver01.xyz</span>                             <hr>                                                   DNS STB V3 BR: <br>                                                 <span style='color: blue;'>209.14.71.101</span>                                                             <hr>                                                         EPG: <br>                                                <span style='color: blue;'>https://abre.ai/u9epg1</span><hr>                                                                                   Webplayer: <br>                                          <span style='color: blue;'>http://unionplayer.xyz</span>              ";
-        
+
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
 userInput.includes("ativar") ||
 userInput.includes("chave") ||
@@ -380,23 +477,14 @@ userInput.includes("teste")) {
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
     }
-    
-    // Saudações
-    if (userInput.includes("bom dia")) {
-        return "Bom dia! Como posso te ajudar?";
-    } else if (userInput.includes("ok") ||
-               userInput.includes("blz")) {
-        return "Qualquer coisa é so falar. 👍😉";
-    } else if (userInput.includes("boa tarde")) {
-        return "Boa tarde! Em que posso te ajudar?";
-    } else if (userInput.includes("boa noite")) {
-        return "Boa noite! Como posso te ajudar?";
-    } else if (userInput.includes("olá") || userInput.includes("ola") ||
-userInput.includes("oi")) {
-        return "Olá! Como posso te ajudar?";
-    }
 
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
+}
+
+// Função para simular o chatbot
+function simularChatbot(mensagemUsuario) {
+    const respostaBot = getBotResponse(mensagemUsuario);
+    document.getElementById("chat-container").innerHTML += `<p>Usuário: ${mensagemUsuario}</p><p>Bot: ${respostaBot}</p>`;
 }
 
 // Função para enviar o formulário para o WhatsApp
