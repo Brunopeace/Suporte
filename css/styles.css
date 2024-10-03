@@ -1,4 +1,9 @@
 .data-vencimento {
+    color: green;
+    font-weight: bold;
+}
+
+.data-vencido {
     color: red;
     font-weight: bold;
 }
