@@ -552,6 +552,11 @@ const clientesVencimento = {
         "telefone": "5551998421757"
         
     },
+    "63093778": {
+        "vencimento": "01/10/2024",
+        "telefone": "5551998421757"
+        
+    },
     
     // Outros clientes omitidos para brevidade...
 };
@@ -600,7 +605,7 @@ function getBotResponse(userInput) {
 if (dataAtual > dataVencimento) {
 return `A assinatura deste usuário está vencida desde <span class="data-vencimento">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
        } else {
-    return `A sua assinatura está válida até o dia <span class="data-vencimento">${clientesVencimento[usuarioInformado].vencimento}</span>.`;
+    return `A sua assinatura está válida até o dia <span class="data-vencido">${clientesVencimento[usuarioInformado].vencimento}</span>`;
 }
                  
 } else {
@@ -629,7 +634,10 @@ return "Não foi possível encontrar informações de vencimento para este clien
     }
 
     // Verifica se a palavra-chave para consulta de vencimento foi mencionada
-    if (userInput.includes("consultar vencimento") || userInput.includes("data de vencimento") || userInput.includes("quando vence minha assinatura")) {
+    if (userInput.includes("consultar vencimento") || userInput.includes("data de vencimento") ||
+        userInput.includes("meu vencimento") ||
+        userInput.includes("minha data de vencimento") ||
+        userInput.includes("quando vence minha assinatura")) {
         aguardandoUsuario = true;
         consultandoVencimento = true;
         return "Para consultar a data de vencimento da sua assinatura, por favor informe seu nome de usuário.";
@@ -780,7 +788,6 @@ userInput.includes("vendedor")) {
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
         return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";
         
-        
         } else if (userInput.includes("esqueci a senha") || userInput.includes("senha") ||
 userInput.includes("usuario") ||
 userInput.includes("usuário") ||
@@ -839,7 +846,6 @@ function sendFormToWhatsApp() {
     var whatsappNumber = "5581982258462";
     var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
 
-    
     window.location.href = url;
 }
 
