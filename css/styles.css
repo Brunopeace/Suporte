@@ -1,9 +1,9 @@
-.data-vencimento {
+#ativo {
     color: green;
     font-weight: bold;
 }
 
-.data-vencido {
+#vencido {
     color: red;
     font-weight: bold;
 }
