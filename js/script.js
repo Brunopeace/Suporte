@@ -603,9 +603,10 @@ function getBotResponse(userInput) {
                         let dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
 
 if (dataAtual > dataVencimento) {
-return `A assinatura deste usuário está vencida desde <span class="data-vencimento">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+return `A assinatura deste usuário está vencida desde <span id="vencido">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+
        } else {
-    return `A sua assinatura está válida até o dia <span class="data-vencido">${clientesVencimento[usuarioInformado].vencimento}</span>`;
+    return `A sua assinatura está válida até o dia <span id="ativo">${clientesVencimento[usuarioInformado].vencimento}</span>`;
 }
                  
 } else {
