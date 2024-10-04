@@ -164,6 +164,10 @@ const clientes = {
         "senha": criptografar("202400"), 
         "telefone": "5571988023878"
     },
+    "railson2018": { 
+        "senha": criptografar("202000"), 
+        "telefone": "5591982374895"
+    },
     // Outros clientes omitidos para brevidade...
 };
 
@@ -601,7 +605,7 @@ function getBotResponse(userInput) {
                     if (clientesVencimento[usuarioInformado]) {
                         let dataAtual = new Date();
                         let dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
-
+                        
 if (dataAtual > dataVencimento) {
 return `A assinatura deste usuário está vencida desde <span id="vencido">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
 
@@ -802,15 +806,15 @@ userInput.includes("esqueci meu usuario e senha")) {
         return "                                                                <span style='color: red;'>📌DNS´s✅</span> <hr>      DNS XCLOUD: <br>                                         <span style='color: blue;'>Union10</span>         <hr>       DNS SMARTERS PLAYER: <br>                                      <span style='color: blue;'>http://xpn01.xyz</span>   <hr>                      DNS XCIPTV 1: <br>                                   <span style='color: blue;'>https://srv01.top</span>     <hr>                                                    DNS XCIPTV 2: <br>                                   <span style='color: blue;'>https://sr.xdriver01.xyz</span>                             <hr>                                                   DNS STB V3 BR: <br>                                                 <span style='color: blue;'>209.14.71.101</span>                                                             <hr>                                                         EPG: <br>                                                <span style='color: blue;'>https://abre.ai/u9epg1</span><hr>                                                                                   Webplayer: <br>                                          <span style='color: blue;'>http://unionplayer.xyz</span>              ";
 
         } else if (userInput.includes("reativar") || userInput.includes("renovar") || userInput.includes("ativação") ||
-userInput.includes("ativar") ||
-userInput.includes("chave") ||
-userInput.includes("seu pix")) {
-        return "Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> ou Pix Celular: <span style='color: red;'>81982258462</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*%20' target='_blank'>Enviar comprovante</a>";
+           userInput.includes("ativar") ||
+           userInput.includes("chave pix") ||
+           userInput.includes("seu pix")) {
+    return `<img src="./img/chavepix.jpg" alt="Descrição da Imagem" style="max-width: 100%; height: auto;"> <br>Ola, segue aqui meu PIX EMAIL: <span style='color: blue;'>brunopeaceandlove60@gmail.com</span> ou Pix Celular: <span style='color: red;'>81982258462</span> após fazer o pagamento envie o comprovante para nosso suporte para eles poder fazer sua ativação 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20fiz%20o%20pagamento%20poderia%20ativar%20meu%20acesso%20por%20favor*' target='_blank'>Enviar comprovante</a>`;
         
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
 userInput.includes("teste")) {
         return "Você usa Tvbox, Firestick ou Smartv?";
-        
+              
     } else if (userInput.includes("firestick") || userInput.includes("firestik")) {
         return "Certo. No seu Firestick baixe o aplicativo, <span style='color: blue;'>Downloader</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>103582</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
         
