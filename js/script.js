@@ -168,7 +168,7 @@ const clientes = {
         "senha": criptografar("202000"), 
         "telefone": "5591982374895"
     },
-    // Outros clientes omitidos para brevidade...
+   
 };
 
 // Banco de dados separado para verificar a data de vencimento dos clientes
@@ -186,7 +186,7 @@ const clientesVencimento = {
         "telefone": "5571992336681"
     },
     "6829636": { // 04
-        "vencimento": "13/10/2024",
+        "vencimento": "13/11/2024",
         "telefone": "5547988186298"
     },
     "78276538": { // 05
@@ -194,7 +194,7 @@ const clientesVencimento = {
         "telefone": "5521994532922"
     },
     "606hk208": { // 06
-        "vencimento": "08/10/2024",
+        "vencimento": "08/11/2024",
         "telefone": "5521998564510"
     },
     "505gw152": { // 07
@@ -228,7 +228,7 @@ const clientesVencimento = {
         
     },
     "d27756": { // 14
-        "vencimento": "03/10/2024",
+        "vencimento": "19/12/2024",
         "telefone": "5511948734273"
         
     },
@@ -283,7 +283,7 @@ const clientesVencimento = {
         
     },
     "008m260": { // 25
-        "vencimento": "20/10/2024",
+        "vencimento": "20/11/2024",
         "telefone": "5521994980520"
         
     },
@@ -298,12 +298,12 @@ const clientesVencimento = {
         
     },
     "79yx6i70": { // 28
-        "vencimento": "09/10/2024",
+        "vencimento": "09/11/2024",
         "telefone": "5511998145647"
         
     },
     "82x2la5j": { // 29
-        "vencimento": "15/10/2024",
+        "vencimento": "15/11/2024",
         "telefone": "5581983770933"
         
     },
@@ -313,12 +313,12 @@ const clientesVencimento = {
         
     },
     "3607901": { // 31
-        "vencimento": "18/10/2024",
+        "vencimento": "18/11/2024",
         "telefone": "5586994296762"
         
     },
     "5283632": { // 32
-        "vencimento": "18/10/2024",
+        "vencimento": "18/11/2024",
         "telefone": "5586994296762"
         
     },
@@ -338,12 +338,12 @@ const clientesVencimento = {
         
     },
     "0543631": { // 36
-        "vencimento": "16/10/2024",
+        "vencimento": "20/11/2024",
         "telefone": "5581999701628"
         
     },
     "074l2k32": { // 37
-        "vencimento": "17/10/2024",
+        "vencimento": "20/11/2024",
         "telefone": "5581999701628"
         
     },
@@ -352,11 +352,11 @@ const clientesVencimento = {
         "telefone": "5547997594845"
     },
     "16793082": { // 39
-        "vencimento": "16/10/2024",
+        "vencimento": "16/11/2024",
         "telefone": "5547997911355"
     },
     "3x93y79": { // 40
-        "vencimento": "19/10/2023",
+        "vencimento": "19/12/2023",
         "telefone": "5521965465767"
     },
     "4192636": { // 41
@@ -368,15 +368,15 @@ const clientesVencimento = {
         "telefone": "5581986763522"
     },
     "marcelaleal2020": { // 43
-        "vencimento": "08/10/2024",
+        "vencimento": "10/12/2024",
         "telefone": "5581984677279"
     },
     "436dc2v6": { // 44
-        "vencimento": "10/10/2024",
+        "vencimento": "10/12/2024",
         "telefone": "5554984363796"
     },
     "9m934173": { // 45
-        "vencimento": "07/10/2024",
+        "vencimento": "07/11/2024",
         "telefone": "5581994213227"
     },
     "6629263": { // 46
@@ -384,7 +384,7 @@ const clientesVencimento = {
         "telefone": "5511915771984"
     },
     "6910736": { // 47
-        "vencimento": "10/10/2024",
+        "vencimento": "10/11/2024",
         "telefone": "5521999169132"
     },
     "2927262": { // 48
@@ -397,17 +397,17 @@ const clientesVencimento = {
         
     },
     "zk3f7490": { // 50
-        "vencimento": "11/10/2024",
+        "vencimento": "11/11/2024",
         "telefone": "5581996769933"
         
     },
     "73755433": { // 51
-        "vencimento": "13/10/2024",
+        "vencimento": "15/12/2024",
         "telefone": "5594991661714"
         
     },
     "66176t49": { // 52
-        "vencimento": "15/10/2024",
+        "vencimento": "19/11/2024",
         "telefone": "5521964059369"
         
     },
@@ -447,7 +447,7 @@ const clientesVencimento = {
         
     },
     "569z489": { // 60
-        "vencimento": "01/10/2024",
+        "vencimento": "03/11/2024",
         "telefone": "5581995648364"
         
     },
@@ -472,7 +472,7 @@ const clientesVencimento = {
         
     },
     "9045823": { // 65
-        "vencimento": "10/10/2024",
+        "vencimento": "12/11/2024",
         "telefone": "5547984449001"
         
     },
@@ -482,37 +482,37 @@ const clientesVencimento = {
         
     },
     "8085545": { // 67
-        "vencimento": "15/10/2024",
+        "vencimento": "16/11/2024",
         "telefone": "5547991803770"
         
     },
     "27n306": { // 68
-        "vencimento": "15/10/2024",
+        "vencimento": "16/11/2024",
         "telefone": "5581988831182"
         
     },
     "25510y05": { // 69
-        "vencimento": "16/10/2024",
+        "vencimento": "19/11/2024",
         "telefone": "5547999719936"
         
     },
     "04drx173": { // 70
-        "vencimento": "16/10/2024",
+        "vencimento": "19/11/2024",
         "telefone": "5547999719936"
         
     },
     "4t87s83": { // 71
-        "vencimento": "17/10/2024",
+        "vencimento": "18/11/2024",
         "telefone": "5521998616085"
         
     },
     "lucas20201": { // 72
-        "vencimento": "18/10/2024",
+        "vencimento": "18/11/2024",
         "telefone": "5586994296762"
         
     },
     "4y5254": { // 73
-        "vencimento": "19/10/2024",
+        "vencimento": "20/11/2024",
         "telefone": "5581982258462"
         
     },
@@ -563,6 +563,7 @@ const clientesVencimento = {
     "914460": { // 83
         "vencimento": "06/11/2024",
         "telefone": "5581987903583"
+        
         
     },
     
@@ -751,7 +752,7 @@ userInput.includes("recarregar")) {
         <button type="button" onclick="sendFormToWhatsApp()">Enviar para o Suporte</button>
     </form>`;
  
-        } else if (userInput.includes("compatível") || userInput.includes("tv")) {
+} else if (userInput.includes("compatível") || userInput.includes("tv")) {
     return "Nosso serviço é compatível com a maioria das TVs Smart, Tvbox, Firestick, entre outros. Se quiser ter certeza, podemos te passar um teste gratuito de 6 horas.";
         
         } else if (userInput.includes("velocidade") || userInput.includes("minima")) {
@@ -827,7 +828,7 @@ userInput.includes("teste")) {
         
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
-    }
+    }        
 
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
 }
