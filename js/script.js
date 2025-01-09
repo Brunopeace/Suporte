@@ -74,7 +74,7 @@ function descriptografar(dadosCriptografados) {
 const clientes = {
     "italo2022": { 
         "senha": criptografar("202400"), 
-        "telefone": "5581982258462"
+        "telefone": "5567996278764"
         
     },
     "joao20190": { 
