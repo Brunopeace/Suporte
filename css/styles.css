@@ -1,7 +1,7 @@
 /* Estilizando o botão "Como Usar?" */
 #openTutorialBtn {
     position: fixed;
-    bottom: 90vh;
+    bottom: 80vh;
     right: 20px;
     background-color: #007bff;
     color: white;
