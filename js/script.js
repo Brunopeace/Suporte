@@ -424,7 +424,7 @@ const clientesVencimento = {
         
     },
     "885xdc": { // 55
-        "vencimento": "29/10/2024",
+        "vencimento": "06/03/2025",
         "telefone": "5587981630171"
         
     },
@@ -469,7 +469,7 @@ const clientesVencimento = {
         
     },
     "68n62y": { // 64
-        "vencimento": "04/11/2024",
+        "vencimento": "06/03/2025",
         "telefone": "5521968315702"
         
     },
@@ -881,3 +881,27 @@ function clearChat() {
 
 // Event Listener para limpar o chat
 document.getElementById("clearBtn").addEventListener("click", clearChat);
+// Abrir e fechar o modal do tutorial
+document.addEventListener("DOMContentLoaded", function () {
+    let openBtn = document.getElementById("openTutorialBtn");
+    let modal = document.getElementById("tutorialModal");
+    let closeBtn = document.querySelector(".close");
+
+    if (openBtn && modal && closeBtn) {
+        openBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    } else {
+        console.error("Erro: Elementos do modal não encontrados.");
+    }
+});
