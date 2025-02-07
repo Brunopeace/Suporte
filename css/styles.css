@@ -1,62 +1,41 @@
-/* Estilizando o botão "Como Usar?" */
-#openTutorialBtn {
-    position: fixed;
-    bottom: 90%;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 1000; /* Mantém o botão acima dos outros elementos */
-    display: block;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-}
-
-#openTutorialBtn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilizando o Modal */
 .modal {
-    display: none; /* Oculto por padrão */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(8px); /* Desfoque no fundo */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Conteúdo do Modal */
+/* Estilizando o conteúdo do modal */
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Gradiente suave */
+    padding: 25px;
+    border-radius: 12px;
     width: 90%;
     max-width: 500px;
-    height: 80vh; /* Ajusta para ocupar até 80% da altura da tela */
-    margin: 10% auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    height: 75vh;
+    margin: 8% auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     text-align: left;
     position: relative;
-    overflow-y: auto; /* Ativa a barra de rolagem interna */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: slideUp 0.5s ease-in-out;
 }
 
-/* Barra de rolagem dentro do modal */
+/* Barra de rolagem personalizada */
 .modal-content::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #e0e0e0;
     border-radius: 10px;
 }
 
@@ -69,55 +48,123 @@
     background: #0056b3;
 }
 
-/* Botão de fechar (X) */
 .close {
     position: fixed;
-    top: 45px;
+    top: 40px;
     right: 15px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
-    color: red;
-    background-color: #007bff;
-    padding: 5px;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .close:hover {
-    color: red;
+    background-color: darkred;
+    transform: scale(1.1);
 }
 
-/* Efeito de fade-in para o modal */
+#closeTutorialBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+#closeTutorialBtn:hover {
+    background-color: #0056b3;
+}
+
+#openTutorialBtn {
+    position: fixed;
+    bottom: 90%;
+    right: 10px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+#openTutorialBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
     }
     to {
         opacity: 1;
-        transform: scale(1);
     }
 }
 
-/* Responsividade para telas menores */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content h2 {
+    color: green;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.modal-content h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
 @media (max-width: 600px) {
     .modal-content {
         width: 95%;
-        height: 75vh; /* Ajuste menor para telas pequenas */
-        padding: 15px;
+        height: 70vh;
+        padding: 20px;
     }
 
     #openTutorialBtn {
-        padding: 10px 14px;
+        padding: 12px 16px;
         font-size: 14px;
     }
 }
 
 strong {
-    color: blue;
+color: blue;
+
 }
 
-p {
-    font-weight: bold;
+p { 
+font-weight: bold;
+
 }
 
 #ativo {
