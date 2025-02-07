@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot de Atendimento ao cliente</title>
+    <title>Chatbot de Atendimento - Canais de TV</title>
     <link rel="stylesheet" href="css/styles.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </head>
 <body>
-    
+
 <header>
     <img src="img/logo.png" alt="logon" id="logo">
 </header>
-
     <div id="chat-container">
         <div id="output">
     <video autoplay muted loop id="background-video">
@@ -28,5 +27,44 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+
+<!-- Botão para abrir o tutorial -->
+<button id="openTutorialBtn">❓ Como Usar?</button>
+
+
+<!-- Modal do Tutorial -->
+<div id="tutorialModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>📖 Tutorial do Chatbot de Atendimento</h2>
+
+        <h3>1️⃣ Consultando sua data Vencimento</h3>
+        
+        <p>Para saber sua data de vencimento digite: <strong>Minha data de vencimento</strong>
+        e siga as instruções.</p>
+
+        <h3>2️⃣ Voce que é revendedor e esqueceu seu usuario e senha</h3>
+        <p>Digite: <strong>Esqueci a senha do painel</strong> e siga as instruções.</p>
+        
+        <h3>2️⃣ Tabela de credito para revenda</h3>
+        <p>Digite: <strong>Tabela de credito</strong></p>
+
+<h3>2️⃣ Se ainda não é um revendedor</h3>
+        <p>Digite: <strong>Quero ser um revendedor</strong></p>
+
+      <h3>3️⃣ Planos e Preços</h3>
+      <p>Digite: <strong>Quais os planos </strong></p>
+
+<h3>4️⃣ Renovação e Pagamentos</h3>
+        <p>Digite: <strong>Quero renovar minha assinatura</strong></p>
+
+<h3>5️⃣ Caso queira um teste</h3>
+      <p>Digite: <strong>Quero um teste</strong></p>       
+        
+        
+        <h3>6️⃣ Suporte</h3>
+        <p><a href="https://wa.me/5581982258462?text=Olá,%20preciso%20de%20ajuda!" target="_blank">Clique aqui para falar com o suporte</a>.</p>
+    </div>
+</div>
 </body>
 </html>
