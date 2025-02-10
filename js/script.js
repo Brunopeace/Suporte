@@ -529,7 +529,7 @@ const clientesVencimento = {
         
     },
     "163iq1": { // 76
-        "vencimento": "22/10/2024",
+        "vencimento": "08/03/2025",
         "telefone": "5521973465194"
         
     },
@@ -558,19 +558,19 @@ const clientesVencimento = {
         "telefone": "5551998421757"
         
     },
-    "63093778": { // 82
-        "vencimento": "01/10/2024",
-        "telefone": "5551998421757"
+    "0395t1": { // 82
+        "vencimento": "10/03/2025",
+        "telefone": "5521992051481"
     },
     "914460": { // 83
-        "vencimento": "06/11/2024",
+        "vencimento": "08/03/2025",
         "telefone": "5581987903583"
     },
     "4430148": { // 84
         "vencimento": "06/03/2025",
         "telefone": "5581996892752"
     },
-    "152h4vs": { // 84
+    "152h4vs": { // 85
         "vencimento": "06/03/2025",
         "telefone": "5581996892752"
         
