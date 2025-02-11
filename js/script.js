@@ -300,12 +300,12 @@ const clientesVencimento = {
         
     },
     "79yx6i70": { // 28
-        "vencimento": "09/11/2024",
+        "vencimento": "11/03/2025",
         "telefone": "5511998145647"
         
     },
     "82x2la5j": { // 29
-        "vencimento": "15/11/2024",
+        "vencimento": "15/03/2025",
         "telefone": "5581983770933"
         
     },
