@@ -168,6 +168,10 @@ const clientes = {
     "railson2018": { 
         "senha": criptografar("202000"), 
         "telefone": "5591982374895"
+    },
+    "bruno2018": { 
+        "senha": criptografar("1234567890"), 
+        "telefone": "5581982258462"
         
     },
    
