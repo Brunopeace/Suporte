@@ -168,7 +168,7 @@ const clientes = {
     "railson2018": { 
         "senha": criptografar("202000"), 
         "telefone": "5591982374895"
-    },
+     },
     "bruno2018": { 
         "senha": criptografar("1234567890"), 
         "telefone": "5581982258462"
@@ -183,13 +183,13 @@ const clientesVencimento = {
         "vencimento": "03/11/2024",
         "telefone": "5581996685782"
     },
-    "117nvd6": { // 02
-        "vencimento": "31/10/2024",
-        "telefone": "5521987883629"
+    "14l6n284": { // 02
+        "vencimento": "12/03/2025",
+        "telefone": "5561996161993"
     },
-    "64672h3": { // 03
-        "vencimento": "30/09/2024",
-        "telefone": "5571992336681"
+    "117nvd6": { // 03
+        "vencimento": "12/03/2025",
+        "telefone": "5521987883629"
     },
     "6829636": { // 04
         "vencimento": "13/11/2024",
@@ -199,9 +199,9 @@ const clientesVencimento = {
         "vencimento": "07/03/2025",
         "telefone": "5521994532922"
     },
-    "606hk208": { // 06
-        "vencimento": "08/11/2024",
-        "telefone": "5521998564510"
+    "66655216": { // 06
+        "vencimento": "13/03/2025",
+        "telefone": "5521987883629"
     },
     "505gw152": { // 07
         "vencimento": "06/10/2024",
@@ -810,8 +810,8 @@ userInput.includes("vendedor")) {
         return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Loja de aplicativos</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
-        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms-web.getme.skin/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";
-        
+        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms.getu9.online/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";        
+               
         } else if (userInput.includes("esqueci a senha") || userInput.includes("senha") ||
 userInput.includes("usuario") ||
 userInput.includes("usuário") ||
