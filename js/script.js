@@ -188,19 +188,19 @@ const clientesVencimento = {
         "telefone": "5561996161993"
     },
     "117nvd6": { // 03
-        "vencimento": "12/03/2025",
+        "vencimento": "13/05/2025",
         "telefone": "5521987883629"
     },
     "6829636": { // 04
-        "vencimento": "13/11/2024",
+        "vencimento": "15/03/2025",
         "telefone": "5547988186298"
     },
     "78276538": { // 05
-        "vencimento": "07/03/2025",
+        "vencimento": "11/05/2025",
         "telefone": "5521994532922"
     },
     "66655216": { // 06
-        "vencimento": "13/03/2025",
+        "vencimento": "11/05/2025",
         "telefone": "5521987883629"
     },
     "505gw152": { // 07
@@ -216,161 +216,135 @@ const clientesVencimento = {
         "telefone": "5551998421757"
     },
     "01919172": { // 10
-        "vencimento": "01/11/2024",
+        "vencimento": "01/05/2025",
         "telefone": "5581987465583"
     },
-    "68265785": { // 11
-        "vencimento": "23/10/2024",
+    "01l79e28": { // 11
+        "vencimento": "06/05/2025",
         "telefone": "5551999013439"
     },
     "68265785": { // 12
         "vencimento": "23/10/2024",
         "telefone": "5551999013439"
-        
     },
     "6386578s": { // 13
-        "vencimento": "29/10/2024",
+        "vencimento": "02/05/2025",
         "telefone": "5553984394549"
-        
     },
     "d27756": { // 14
         "vencimento": "19/12/2024",
         "telefone": "5511948734273"
-        
     },
     "044i37b": { // 15
-        "vencimento": "29/10/2024",
+        "vencimento": "03/05/2025",
         "telefone": "5594991890666"
-        
     },
     "63760h": { // 16
-        "vencimento": "27/10/2024",
+        "vencimento": "27/04/2025",
         "telefone": "5581986226617"
-        
     },
     "Ywo6795": { // 17
-        "vencimento": "16/12/2024",
+        "vencimento": "16/06/2025",
         "telefone": "5521964655025"
-        
     },
     "utvx5831g8": { // 18
         "vencimento": "19/11/2024",
         "telefone": "5547996561634"
-        
     },
     "83314c2": { // 19
-        "vencimento": "01/12/2024",
+        "vencimento": "03/05/2025",
         "telefone": "5521965465767"
-        
     },
     "26n1432": { // 20
         "vencimento": "29/10/2024",
         "telefone": "5581982258462"
-        
     },
     "37363875": { // 21
         "vencimento": "31/10/2024",
         "telefone": "5521999169132"
-        
     },
     "9d064061": { // 22
-        "vencimento": "26/10/2024",
+        "vencimento": "26/04/2025",
         "telefone": "5581996759869"
-        
     },
     "nk6vs4augusto": { // 23
         "vencimento": "22/10/2024",
         "telefone": "5586994296762"
-        
     },
     "lucas20202": { // 24
         "vencimento": "28/10/2024",
         "telefone": "5586994296762"
-        
     },
     "008m260": { // 25
-        "vencimento": "20/11/2024",
+        "vencimento": "20/05/2025",
         "telefone": "5521994980520"
-        
     },
     "r7114o1": { // 26
         "vencimento": "22/10/2024",
         "telefone": "5521987094902"
-        
     },
     "guilhermefugimoto2020": { // 27
         "vencimento": "16/12/2024",
         "telefone": "5521964655025"
-        
     },
     "79yx6i70": { // 28
-        "vencimento": "11/03/2025",
-        "telefone": "5511998145647"
-        
+        "vencimento": "18/05/2025",
+        "telefone": "5542998251385"
     },
     "82x2la5j": { // 29
         "vencimento": "15/03/2025",
         "telefone": "5581983770933"
-        
     },
     "282542": { // 30
-        "vencimento": "15/11/2024",
+        "vencimento": "15/05/2025",
         "telefone": "5551995862146"
-        
     },
     "3607901": { // 31
         "vencimento": "18/11/2024",
         "telefone": "5586994296762"
-        
     },
     "5283632": { // 32
         "vencimento": "18/11/2024",
         "telefone": "5586994296762"
-        
     },
     "6283636": { // 33
         "vencimento": "25/10/2024",
         "telefone": "5586994296762"
-        
     },
     "8x3334": { // 34
         "vencimento": "18/10/2024",
         "telefone": "5586994296762"
-        
     },
     "jorge202000": { // 35
         "vencimento": "25/10/2024",
         "telefone": "5586994296762"
-        
     },
     "0543631": { // 36
         "vencimento": "20/11/2024",
         "telefone": "5581999701628"
-        
     },
     "074l2k32": { // 37
-        "vencimento": "20/11/2024",
+        "vencimento": "21/04/2025",
         "telefone": "5581999701628"
-        
     },
     "idalino2019": { // 38
         "vencimento": "23/10/2024",
         "telefone": "5547997594845"
     },
     "16793082": { // 39
-        "vencimento": "16/11/2024",
+        "vencimento": "24/04/2025",
         "telefone": "5547997911355"
     },
     "3x93y79": { // 40
-        "vencimento": "19/12/2023",
+        "vencimento": "19/05/2025",
         "telefone": "5521965465767"
     },
     "4192636": { // 41
-        "vencimento": "11/12/2024",
+        "vencimento": "12/06/2025",
         "telefone": "5519983770869"
     },
     "3i9d774p": { // 42
-        "vencimento": "21/10/2024",
+        "vencimento": "21/04/2025",
         "telefone": "5581986763522"
     },
     "marcelaleal2020": { // 43
@@ -378,24 +352,25 @@ const clientesVencimento = {
         "telefone": "5581984677279"
     },
     "436dc2v6": { // 44
-        "vencimento": "10/12/2024",
+        "vencimento": "14/05/2025",
         "telefone": "5554984363796"
     },
     "9m934173": { // 45
-        "vencimento": "07/11/2024",
+        "vencimento": "08/05/2025",
         "telefone": "5581994213227"
     },
     "6629263": { // 46
-        "vencimento": "05/11/2024",
+        "vencimento": "05/05/2025",
         "telefone": "5511915771984"
     },
     "6910736": { // 47
-        "vencimento": "10/11/2024",
+        "vencimento": "30/04/2025",
         "telefone": "5521999169132"
     },
     "2927262": { // 48
-        "vencimento": "25/10/2024",
-        "telefone": "5521972104689"
+        "vencimento": "25/04/2025",
+        "telefone": "5521972104689"   
+        
     },
     "329619": { // 49
         "vencimento": "25/10/2024",
@@ -403,7 +378,7 @@ const clientesVencimento = {
         
     },
     "zk3f7490": { // 50
-        "vencimento": "11/11/2024",
+        "vencimento": "11/05/2025",
         "telefone": "5581996769933"
         
     },
@@ -413,12 +388,12 @@ const clientesVencimento = {
         
     },
     "66176t49": { // 52
-        "vencimento": "19/11/2024",
+        "vencimento": "10/05/2025",
         "telefone": "5521964059369"
         
     },
     "038xd94": { // 53
-        "vencimento": "15/12/2024",
+        "vencimento": "15/06/2025",
         "telefone": "5521992941398"
         
     },
@@ -438,22 +413,22 @@ const clientesVencimento = {
         
     },
     "33cb04": { // 57
-        "vencimento": "29/10/2024",
+        "vencimento": "01/05/2025",
         "telefone": "5551992483609"
         
     },
     "863150d": { // 58
-        "vencimento": "01/11/2024",
+        "vencimento": "01/05/2025",
         "telefone": "5551992483609"
         
     },
-    "9d064061": { // 59
-        "vencimento": "26/10/2024",
-        "telefone": "5581996759869"
+    "3994592": { // 59
+        "vencimento": "27/04/2025",
+        "telefone": "5511998145647"
         
     },
     "569z489": { // 60
-        "vencimento": "08/03/2025",
+        "vencimento": "27/04/2025",
         "telefone": "5581995648364"
         
     },
@@ -463,12 +438,12 @@ const clientesVencimento = {
         
     },
     "xg55496": { // 62
-        "vencimento": "01/11/2024",
+        "vencimento": "04/05/2025",
         "telefone": "5585982054173"
         
     },
     "b1fq87": { // 63
-        "vencimento": "03/11/2024",
+        "vencimento": "04/05/2025",
         "telefone": "5521994119784"
         
     },
@@ -483,7 +458,7 @@ const clientesVencimento = {
         
     },
     "2en6p3": { // 66
-        "vencimento": "13/11/2024",
+        "vencimento": "26/04/2025",
         "telefone": "5581991391906"
         
     },
@@ -493,7 +468,7 @@ const clientesVencimento = {
         
     },
     "27n306": { // 68
-        "vencimento": "18/02/2025",
+        "vencimento": "19/05/2025",
         "telefone": "5581988831182"
         
     },
@@ -518,7 +493,7 @@ const clientesVencimento = {
         
     },
     "4y5254": { // 73
-        "vencimento": "20/11/2024",
+        "vencimento": "20/05/2025",
         "telefone": "5581982258462"
         
     },
@@ -528,22 +503,22 @@ const clientesVencimento = {
         
     },
     "736789": { // 75
-        "vencimento": "21/11/2024",
+        "vencimento": "02/06/2025",
         "telefone": "5511976934184"
         
     },
     "163iq1": { // 76
-        "vencimento": "08/03/2025",
+        "vencimento": "03/05/2025",
         "telefone": "5521973465194"
         
     },
     "5292637": { // 77
-        "vencimento": "22/10/2024",
+        "vencimento": "06/05/2025",
         "telefone": "5519992133422"
         
     },
     "geraldoc704a": { // 78
-        "vencimento": "23/12/2024",
+        "vencimento": "08/07/2025",
         "telefone": "5581998738098"
         
     },
@@ -553,21 +528,21 @@ const clientesVencimento = {
         
     },
     "71927383": { // 80
-        "vencimento": "27/10/2024",
+        "vencimento": "30/04/2025",
         "telefone": "5521964716929"
         
     },
     "630938n": { // 81
-        "vencimento": "28/10/2024",
+        "vencimento": "17/05/2025",
         "telefone": "5551998421757"
         
     },
     "0395t1": { // 82
-        "vencimento": "10/03/2025",
+        "vencimento": "15/05/2025",
         "telefone": "5521992051481"
     },
     "914460": { // 83
-        "vencimento": "08/03/2025",
+        "vencimento": "12/05/2025",
         "telefone": "5581987903583"
     },
     "4430148": { // 84
@@ -577,7 +552,86 @@ const clientesVencimento = {
     "152h4vs": { // 85
         "vencimento": "06/03/2025",
         "telefone": "5581996892752"
-        
+     },
+    "606hk208": { // 86
+        "vencimento": "08/05/2025",
+        "telefone": "5521999564510"
+     },
+    "329619": { // 87
+        "vencimento": "25/04/2025",
+        "telefone": "5521972104689"
+     },
+    "49b8x0": { // 88
+        "vencimento": "02/05/2025",
+        "telefone": "5517997158585"
+     },
+    "885xdc1": { // 89
+        "vencimento": "13/05/2025",
+        "telefone": "5587981630171"
+     },
+    "15271p9": { // 90
+        "vencimento": "26/04/2025",
+        "telefone": "5511961854190"
+     },
+    "050x00kja": { // 91
+        "vencimento": "11/06/2025",
+        "telefone": "5511989387233"
+     },
+    "44520691": { // 92
+        "vencimento": "07/05/2025",
+        "telefone": "5521964093836"
+     },
+    "317584": { // 93
+        "vencimento": "18/05/2025",
+        "telefone": "5581999224378"
+     },
+    "100675": { // 94
+        "vencimento": "11/05/2025",
+        "telefone": "5521983014878"
+     },
+    "fabioravena": { // 95
+        "vencimento": "23/04/2025",
+        "telefone": "5519995082732"
+     },
+    "5ek6964": { // 96
+        "vencimento": "02/05/2025",
+        "telefone": "5541988491748"
+     },
+    "221455": { // 97
+        "vencimento": "03/02/2026",
+        "telefone": "5581982258462"
+     },
+    "zy7kleu": { // 98
+        "vencimento": "16/05/2025",
+        "telefone": "5561996161993"
+     },
+    "8a3c732": { // 99
+        "vencimento": "01/05/2025",
+        "telefone": "5561991025012"
+     },
+    "00e646": { // 99
+        "vencimento": "03/05/2025",
+        "telefone": "5581998295891"
+     },
+    "093925": { // 100
+        "vencimento": "09/05/2025",
+        "telefone": "5521964093836"
+     },
+    "anthony2022": { // 101
+        "vencimento": "21/04/2025",
+        "telefone": "5581996685782"
+     },
+    "6b19571m": { // 102
+        "vencimento": "29/05/2025",
+        "telefone": "5561996161993"
+     },
+    "73475t5": { // 103
+        "vencimento": "18/05/2025",
+        "telefone": "5521990947573"
+     },
+    "710690": { // 103
+        "vencimento": "20/04/2025",
+        "telefone": "5554984363796"                                   
         
     },
     
@@ -841,7 +895,7 @@ userInput.includes("teste")) {
         return "Certo. Na sua smartv android, baixe o aplicativo <span style='color: blue;'>ntDown</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
         
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
-        return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://xpn01.xyz</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>XCLOUD</span> abra ele e coloque:  <span style='color: red;'>Union10</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
+        return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://p88.site</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>LAZER PLAYER</span> abra ele clique em playlist e no código coloque:  <span style='color: red;'>K24bohu5</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
     }        
 
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
