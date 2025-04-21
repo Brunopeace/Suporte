@@ -324,7 +324,7 @@ const clientesVencimento = {
         "telefone": "5581999701628"
     },
     "074l2k32": { // 37
-        "vencimento": "21/04/2025",
+        "vencimento": "21/05/2025",
         "telefone": "5581999701628"
     },
     "idalino2019": { // 38
