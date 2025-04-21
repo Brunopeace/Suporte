@@ -344,7 +344,7 @@ const clientesVencimento = {
         "telefone": "5519983770869"
     },
     "3i9d774p": { // 42
-        "vencimento": "21/04/2025",
+        "vencimento": "21/07/2025",
         "telefone": "5581986763522"
     },
     "marcelaleal2020": { // 43
