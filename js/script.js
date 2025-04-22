@@ -280,7 +280,7 @@ const clientesVencimento = {
         "telefone": "5521994980520"
     },
     "r7114o1": { // 26
-        "vencimento": "22/10/2024",
+        "vencimento": "22/05/2025",
         "telefone": "5521987094902"
     },
     "guilhermefugimoto2020": { // 27
