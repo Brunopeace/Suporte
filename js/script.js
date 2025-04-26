@@ -179,9 +179,9 @@ const clientes = {
 
 // Banco de dados separado para verificar a data de vencimento dos clientes
 const clientesVencimento = {
-    "anthony2024": { // 01
-        "vencimento": "03/11/2024",
-        "telefone": "5581996685782"
+    "988xm473": { // 01
+        "vencimento": "26/05/2025",
+        "telefone": "5511977710449"
     },
     "14l6n284": { // 02
         "vencimento": "12/03/2025",
