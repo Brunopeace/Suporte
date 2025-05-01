@@ -228,7 +228,7 @@ const clientesVencimento = {
         "telefone": "5551999013439"
     },
     "6386578s": { // 13
-        "vencimento": "02/05/2025",
+        "vencimento": "02/06/2025",
         "telefone": "5553984394549"
     },
     "d27756": { // 14
