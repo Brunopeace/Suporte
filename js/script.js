@@ -408,7 +408,7 @@ const clientesVencimento = {
         
     },
     "33cb04": { // 56
-        "vencimento": "01/05/2025",
+        "vencimento": "05/06/2025",
         "telefone": "5551992483609"
         
     },
