@@ -6,9 +6,7 @@ const urlsToCache = [
   "js/script.js",
   "img/chatbot.png",
   "img/logo.png",
-  "video/conscienciencia.mp4",
-  "service-worker.js",
-  "manifest.json"
+  "video/conscienciencia.mp4"
 ];
 
 // Instalação do Service Worker
