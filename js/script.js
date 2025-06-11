@@ -16,38 +16,6 @@ let aguardandoTelefone = false;
 let usuarioInformado = '';
 let consultandoVencimento = false;
 
-//botao de instalação PWA
-  let deferredPrompt;
-  const installBtn = document.getElementById('installBtn');
-
-  // Escutar o evento antes do prompt de instalação
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Impede que o prompt apareça automaticamente
-    deferredPrompt = e;
-    installBtn.style.display = 'block'; // Mostra o botão
-  });
-
-  // Quando o usuário clicar no botão
-  installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
-        console.log('Usuário aceitou instalar o PWA');
-      } else {
-        console.log('Usuário recusou a instalação');
-      }
-      deferredPrompt = null;
-      installBtn.style.display = 'none'; // Oculta o botão após a tentativa
-    }
-  });
-
-  // Oculta o botão se o app já estiver instalado
-  window.addEventListener('appinstalled', () => {
-    console.log('PWA instalado com sucesso');
-    installBtn.style.display = 'none';
-  });
-
 // Event Listener para o botão de envio
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
