@@ -1,3 +1,68 @@
+// Abrir o modal
+document.getElementById("openTutorialBtn").addEventListener("click", function () {
+    document.getElementById("tutorialModal").style.display = "block";
+});
+
+// Fechar o modal quando clicar no "X"
+document.querySelector("#tutorialModal .close").addEventListener("click", function () {
+    document.getElementById("tutorialModal").style.display = "none";
+});
+
+// Fechar o modal ao clicar fora da área do conteúdo
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("tutorialModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(reg => console.log("Service Worker registrado!", reg))
+        .catch(err => console.error("Erro ao registrar o Service Worker:", err));
+    });
+  }
+  
+  //botao de instalação PWA
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+
+  // Escutar o evento antes do prompt de instalação
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Impede que o prompt apareça automaticamente
+    deferredPrompt = e;
+    installBtn.style.display = 'block'; // Mostra o botão
+  });
+
+  // Quando o usuário clicar no botão
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('Usuário aceitou instalar o PWA');
+      } else {
+        console.log('Usuário recusou a instalação');
+      }
+      deferredPrompt = null;
+      installBtn.style.display = 'none'; // Oculta o botão após a tentativa
+    }
+  });
+
+  // Oculta o botão se o app já estiver instalado
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA instalado com sucesso');
+    installBtn.style.display = 'none';
+  });
+
+
+
+
+
+
+
+
 firebase.database().ref('clientes').once('value')
   .then(snapshot => {
     clientesVencimento = snapshot.val() || {};
