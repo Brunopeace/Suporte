@@ -465,3 +465,23 @@ a:hover {
         height: 80px;
  }
 }
+
+#installBtn {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: red;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  appearance: none; /* remove estilo nativo */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#installBtn:hover {
+  background: linear-gradient(135deg, #1e7e34, #155724);
+  transform: scale(1.05);
+}
