@@ -48,15 +48,6 @@ let consultandoVencimento = false;
     installBtn.style.display = 'none';
   });
 
-
-
-
-
-
-
-
-
-
 // Event Listener para o botão de envio
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
