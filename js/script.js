@@ -1,3 +1,21 @@
+firebase.database().ref('clientes').once('value')
+  .then(snapshot => {
+    clientesVencimento = snapshot.val() || {};
+    firebasePronto = true;
+    console.log("📦 Clientes carregados:", clientesVencimento);
+  })
+  .catch(error => {
+    console.error("❌ Erro ao carregar Firebase:", error);
+  });
+  
+// Variáveis para armazenar o estado da conversa  
+let firebasePronto = false;
+let clientesVencimento = {};
+let aguardandoUsuario = false;
+let aguardandoTelefone = false;
+let usuarioInformado = '';
+let consultandoVencimento = false;
+
 // Event Listener para o botão de envio
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
@@ -177,473 +195,45 @@ const clientes = {
    
 };
 
-// Banco de dados separado para verificar a data de vencimento dos clientes
-const clientesVencimento = {
-    "988xm473": { // 01
-        "vencimento": "26/05/2025",
-        "telefone": "5511977710449"
-    },
-    "14l6n284": { // 02
-        "vencimento": "12/03/2025",
-        "telefone": "5561996161993"
-    },
-    "117nvd6": { // 03
-        "vencimento": "13/05/2025",
-        "telefone": "5521987883629"
-    },
-    "6829636": { // 04
-        "vencimento": "15/03/2025",
-        "telefone": "5547988186298"
-    },
-    "78276538": { // 05
-        "vencimento": "11/05/2025",
-        "telefone": "5521994532922"
-    },
-    "66655216": { // 06
-        "vencimento": "11/05/2025",
-        "telefone": "5521987883629"
-    },
-    "505gw152": { // 07
-        "vencimento": "06/10/2024",
-        "telefone": "5564993421250"
-    },
-    "31c5o4": { // 08
-        "vencimento": "08/11/2024",
-        "telefone": "5581999224378"
-    },
-    "5hj8r97": { // 09
-        "vencimento": "11/11/2024",
-        "telefone": "5551998421757"
-    },
-    "01919172": { // 10
-        "vencimento": "01/05/2025",
-        "telefone": "5581987465583"
-    },
-    "01l79e28": { // 11
-        "vencimento": "06/06/2025",
-        "telefone": "5551999013439"
-    },
-    "68265785": { // 12
-        "vencimento": "23/10/2024",
-        "telefone": "5551999013439"
-    },
-    "6386578s": { // 13
-        "vencimento": "02/06/2025",
-        "telefone": "5553984394549"
-    },
-    "d27756": { // 14
-        "vencimento": "19/12/2024",
-        "telefone": "5511948734273"
-    },
-    "044i37b": { // 15
-        "vencimento": "03/05/2025",
-        "telefone": "5594991890666"
-    },
-    "63760h": { // 16
-        "vencimento": "27/07/2025",
-        "telefone": "5581986226617"
-    },
-    "Ywo6795": { // 17
-        "vencimento": "16/06/2025",
-        "telefone": "5521964655025"
-    },
-    "utvx5831g8": { // 18
-        "vencimento": "20/06/2025",
-        "telefone": "5547996561634"
-    },
-    "83314c2": { // 19
-        "vencimento": "07/06/2025",
-        "telefone": "5521965465767"
-    },
-    "26n1432": { // 20
-        "vencimento": "29/10/2024",
-        "telefone": "5581982258462"
-    },
-    "37363875": { // 21
-        "vencimento": "31/10/2024",
-        "telefone": "5521999169132"
-    },
-    "9d064061": { // 22
-        "vencimento": "03/06/2025",
-        "telefone": "5581996759869"
-    },
-    "nk6vs4augusto": { // 23
-        "vencimento": "22/10/2024",
-        "telefone": "5586994296762"
-    },
-    "lucas20202": { // 24
-        "vencimento": "28/10/2024",
-        "telefone": "5586994296762"
-    },
-    "008m260": { // 25
-        "vencimento": "20/05/2025",
-        "telefone": "5521994980520"
-    },
-    "r7114o1": { // 26
-        "vencimento": "22/05/2025",
-        "telefone": "5521987094902"
-    },
-    "guilhermefugimoto2020": { // 27
-        "vencimento": "16/12/2024",
-        "telefone": "5521964655025"
-    },
-    "79yx6i70": { // 28
-        "vencimento": "18/05/2025",
-        "telefone": "5542998251385"
-    },
-    "82x2la5j": { // 29
-        "vencimento": "15/03/2025",
-        "telefone": "5581983770933"
-    },
-    "282542": { // 30
-        "vencimento": "15/07/2025",
-        "telefone": "5551995862146"
-    },
-    "3607901": { // 31
-        "vencimento": "18/11/2024",
-        "telefone": "5586994296762"
-    },
-    "5283632": { // 32
-        "vencimento": "18/11/2024",
-        "telefone": "5586994296762"
-    },
-    "6283636": { // 33
-        "vencimento": "25/10/2024",
-        "telefone": "5586994296762"
-    },
-    "8x3334": { // 34
-        "vencimento": "18/10/2024",
-        "telefone": "5586994296762"
-    },
-    "jorge202000": { // 35
-        "vencimento": "25/10/2024",
-        "telefone": "5586994296762"
-    },
-    "0543631": { // 36
-        "vencimento": "20/11/2024",
-        "telefone": "5581999701628"
-    },
-    "074l2k32": { // 37
-        "vencimento": "21/05/2025",
-        "telefone": "5581999701628"
-    },
-    "idalino2019": { // 38
-        "vencimento": "23/10/2024",
-        "telefone": "5547997594845"
-    },
-    "16793082": { // 39
-        "vencimento": "28/05/2025",
-        "telefone": "5547997911355"
-    },
-    "3x93y79": { // 40
-        "vencimento": "19/06/2025",
-        "telefone": "5521965465767"
-    },
-    "4192636": { // 41
-        "vencimento": "12/06/2025",
-        "telefone": "5519983770869"
-    },
-    "3i9d774p": { // 42
-        "vencimento": "21/07/2025",
-        "telefone": "5581986763522"
-    },
-    "h932805": { // 43
-        "vencimento": "28/05/2025",
-        "telefone": "5521998704978"
-    },
-    "436dc2v6": { // 44
-        "vencimento": "14/05/2025",
-        "telefone": "5554984363796"
-    },
-    "9m934173": { // 45
-        "vencimento": "08/05/2025",
-        "telefone": "5581994213227"
-    },
-    "6629263": { // 46
-        "vencimento": "05/05/2025",
-        "telefone": "5511915771984"
-    },
-    "6910736": { // 47
-        "vencimento": "31/05/2025",
-        "telefone": "5521999169132"
-    },
-    "2927262": { // 48
-        "vencimento": "25/05/2025",
-        "telefone": "5521972104689"   
-        
-    },
-    "zk3f7490": { // 49
-        "vencimento": "11/05/2025",
-        "telefone": "5581996769933"
-        
-    },
-    "73755433": { // 50
-        "vencimento": "27/05/2025",
-        "telefone": "5594991661714"
-        
-    },
-    "66176t49": { // 51
-        "vencimento": "10/05/2025",
-        "telefone": "5521964059369"
-        
-    },
-    "038xd94": { // 52
-        "vencimento": "15/06/2025",
-        "telefone": "5521992941398"
-        
-    },
-    "64672h3": { // 53
-        "vencimento": "26/05/2025",
-        "telefone": "5571992336681"
-        
-    },
-    "885xdc": { // 54
-        "vencimento": "06/03/2025",
-        "telefone": "5587981630171"
-        
-    },
-    "3944139": { // 55
-        "vencimento": "26/05/2025",
-        "telefone": "5581987950177"
-        
-    },
-    "33cb04": { // 56
-        "vencimento": "05/06/2025",
-        "telefone": "5551992483609"
-        
-    },
-    "863150d": { // 57
-        "vencimento": "01/05/2025",
-        "telefone": "5551992483609"
-        
-    },
-    "3994592": { // 58
-        "vencimento": "27/05/2025",
-        "telefone": "5511998145647"
-        
-    },
-    "569z489": { // 59
-        "vencimento": "27/05/2025",
-        "telefone": "5581995648364"
-        
-    },
-    "3577i6": { // 60
-        "vencimento": "31/10/2024",
-        "telefone": "5581987950177"
-        
-    },
-    "xg55496": { // 61
-        "vencimento": "06/07/2025",
-        "telefone": "5585982054173"
-        
-    },
-    "b1fq87": { // 62
-        "vencimento": "04/06/2025",
-        "telefone": "5521994119784"
-        
-    },
-    "68n62y": { // 63
-        "vencimento": "06/03/2025",
-        "telefone": "5521968315702"
-        
-    },
-    "9045823": { // 64
-        "vencimento": "23/05/2025",
-        "telefone": "5547984449001"
-        
-    },
-    "2en6p3": { // 65
-        "vencimento": "30/06/2025",
-        "telefone": "5581991391906"
-        
-    },
-    "8085545": { // 67
-        "vencimento": "16/11/2024",
-        "telefone": "5547991803770"
-        
-    },
-    "27n306": { // 67
-        "vencimento": "19/05/2025",
-        "telefone": "5581988831182"
-        
-    },
-    "25510y05": { // 68
-        "vencimento": "19/11/2024",
-        "telefone": "5547999719936"
-        
-    },
-    "04drx173": { // 69
-        "vencimento": "19/11/2024",
-        "telefone": "5547999719936"
-        
-    },
-    "4t87s83": { // 70
-        "vencimento": "18/11/2024",
-        "telefone": "5521998616085"
-        
-    },
-    "lucas20201": { // 71
-        "vencimento": "18/11/2024",
-        "telefone": "5586994296762"
-        
-    },
-    "4y5254": { // 72
-        "vencimento": "20/05/2025",
-        "telefone": "5581982258462"
-        
-    },
-    "80709c82": { // 73
-        "vencimento": "19/10/2024",
-        "telefone": "5521973502309"
-        
-    },
-    "736789": { // 74
-        "vencimento": "02/06/2025",
-        "telefone": "5511976934184"
-        
-    },
-    "163iq1": { // 75
-        "vencimento": "04/06/2025",
-        "telefone": "5521973465194"
-        
-    },
-    "5292637": { // 76
-        "vencimento": "07/07/2025",
-        "telefone": "5519992133422"
-        
-    },
-    "geraldoc704a": { // 77
-        "vencimento": "08/07/2025",
-        "telefone": "5581998738098"
-        
-    },
-    "p841t05": { // 78
-        "vencimento": "25/11/2024",
-        "telefone": "5554984363796"
-        
-    },
-    "71927383": { // 79
-        "vencimento": "30/04/2025",
-        "telefone": "5521964716929"
-        
-    },
-    "630938n": { // 80
-        "vencimento": "17/05/2025",
-        "telefone": "5551998421757"
-        
-    },
-    "0395t1": { // 81
-        "vencimento": "15/05/2025",
-        "telefone": "5521992051481"
-    },
-    "914460": { // 82
-        "vencimento": "12/05/2025",
-        "telefone": "5581987903583"
-    },
-    "4430148": { // 83
-        "vencimento": "06/03/2025",
-        "telefone": "5581996892752"
-    },
-    "152h4vs": { // 84
-        "vencimento": "06/03/2025",
-        "telefone": "5581996892752"
-     },
-    "606hk208": { // 85
-        "vencimento": "08/06/2025",
-        "telefone": "5521999564510"
-     },
-    "329619": { // 86
-        "vencimento": "25/05/2025",
-        "telefone": "5521972104689"
-     },
-    "49b8x0": { // 87
-        "vencimento": "02/05/2025",
-        "telefone": "5517997158585"
-     },
-    "885xdc1": { // 88
-        "vencimento": "13/05/2025",
-        "telefone": "5587981630171"
-     },
-    "15271p9": { // 89
-        "vencimento": "29/05/2025",
-        "telefone": "5511961854190"
-     },
-    "050x00kja": { // 90
-        "vencimento": "11/06/2025",
-        "telefone": "5511989387233"
-     },
-    "44520691": { // 91
-        "vencimento": "07/06/2025",
-        "telefone": "5521964093836"
-     },
-    "317584": { // 92
-        "vencimento": "18/05/2025",
-        "telefone": "5581999224378"
-     },
-    "100675": { // 93
-        "vencimento": "11/05/2025",
-        "telefone": "5521983014878"
-     },
-    "fabioravena": { // 94
-        "vencimento": "24/05/2025",
-        "telefone": "5519995082732"
-     },
-    "5ek6964": { // 95
-        "vencimento": "02/05/2025",
-        "telefone": "5541988491748"
-     },
-    "221455": { // 96
-        "vencimento": "03/02/2026",
-        "telefone": "5581982258462"
-     },
-    "zy7kleu": { // 97
-        "vencimento": "16/05/2025",
-        "telefone": "5561996161993"
-     },
-    "8a3c732": { // 98
-        "vencimento": "01/05/2025",
-        "telefone": "5561991025012"
-     },
-    "00e646": { // 99
-        "vencimento": "03/05/2025",
-        "telefone": "5581998295891"
-     },
-    "093925": { // 100
-        "vencimento": "09/06/2025",
-        "telefone": "5521964093836"
-     },
-    "anthony2022": { // 101
-        "vencimento": "21/04/2025",
-        "telefone": "5581996685782"
-     },
-    "6b19571m": { // 102
-        "vencimento": "29/05/2025",
-        "telefone": "5561996161993"
-     },
-    "73475t5": { // 103
-        "vencimento": "18/05/2025",
-        "telefone": "5521990947573"
-     
-     },
-    "1214188": { // 53
-        "vencimento": "02/06/2025",
-        "telefone": "5571992336681"
-     
-     },
-    "710690": { // 104
-        "vencimento": "20/04/2025",
-        "telefone": "5554984363796"                                   
-        
-    },
-    
-    // Outros clientes omitidos para brevidade...
-};
+// Função para simular o chatbot
+function simularChatbot(mensagemUsuario) {
+    const respostaBot = getBotResponse(mensagemUsuario);
+    document.getElementById("chat-container").innerHTML += `<p>Usuário: ${mensagemUsuario}</p><p>Bot: ${respostaBot}</p>`;
+}
 
-// Variáveis para armazenar o estado da conversa
-let aguardandoUsuario = false;
-let aguardandoTelefone = false;
-let consultandoVencimento = false;
-let usuarioInformado = "";
+// Função para enviar o formulário para o WhatsApp
+function sendFormToWhatsApp() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var message = document.getElementById("message").value;
+
+    if (username === "" || password === "") {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    // Formata a mensagem que será enviada
+    var whatsappMessage = `*Usuário*: ${username}\n\n*Senha*: ${password}\n\n*Observação*: ${message}`;
+
+    var whatsappNumber = "5581982258462";
+    var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.location.href = url;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("clearBtn").addEventListener("click", clearChat);
+});
+
+// Função para limpar o chat
+function clearChat() {
+    const output = document.getElementById("output");
+    const mensagens = output.querySelectorAll(".message");
+
+    mensagens.forEach(msg => msg.remove());
+
+    localStorage.removeItem("chatMessages"); // Limpa mensagens salvas
+}
 
 // Função para converter uma data no formato dd/mm/yyyy para um objeto Date
 function converterData(dataString) {
@@ -658,53 +248,56 @@ function converterData(dataString) {
 function getBotResponse(userInput) {
     userInput = userInput.trim().toLowerCase();
 
-    // Verifica se o cliente está no processo de recuperação de senha
+    // ⏳ Aguarda o carregamento dos dados do Firebase
+    if (!firebasePronto) {
+        return "⏳ Por favor, aguarde... estamos carregando os dados dos clientes.";
+    }
+
+    // 🔐 Passo 1: Armazena o nome de usuário
     if (aguardandoUsuario) {
-        usuarioInformado = userInput; // Armazena o nome de usuário
+        usuarioInformado = userInput;
         aguardandoUsuario = false;
         aguardandoTelefone = true;
         return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. Exemplo: <span style='color: blue;'>5581988776655</span>";
     }
-
+    
+    // 📞 Passo 2: Valida o telefone
     if (aguardandoTelefone) {
-        aguardandoTelefone = false;
+    aguardandoTelefone = false;
 
-        // Verifica se o nome de usuário existe no banco de dados de clientes
-        if (clientes[usuarioInformado] || clientesVencimento[usuarioInformado]) {
-            let cliente = clientes[usuarioInformado] || clientesVencimento[usuarioInformado];
-            // Verifica se o telefone informado corresponde ao do banco de dados
-            if (cliente.telefone === userInput) {
-                // Se estiver consultando vencimento
-                if (consultandoVencimento) {
-                    if (clientesVencimento[usuarioInformado]) {
-                        let dataAtual = new Date();
-                        let dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
-                        
-if (dataAtual > dataVencimento) {
-return `A assinatura deste usuário está vencida desde <span id="vencido">${clientesVencimento[usuarioInformado].vencimento}.</span> caso queira reativar favor entrar em contato com o nosso suporte: 👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+    let cliente = clientes[usuarioInformado] || clientesVencimento[usuarioInformado];
 
-       } else {
-    return `A sua assinatura está válida até o dia <span id="ativo">${clientesVencimento[usuarioInformado].vencimento}</span>`;
-}
-                 
-} else {
-return "Não foi possível encontrar informações de vencimento para este cliente.";
-                    }
-                }                     
+    if (cliente) {
+        const telefoneFirebase = cliente.telefone.startsWith("55") ? cliente.telefone : "55" + cliente.telefone;
 
-                if (clientes[usuarioInformado]) {
-                    let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
-                    let whatsappLink = `https://wa.me/${cliente.telefone}?text=Link%20de%20acesso%20ao%20painel:%20https://cms.getu9.online/%0A%0A%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
-                    return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
-          }
-                
-            } else {
-                return "O telefone informado não corresponde ao usuário fornecido. Limpe a conversa e atualize a página, e tente novamente, ou entre em contato com o suporte.";
+        if (telefoneFirebase === userInput) {
+            // Se estiver consultando vencimento
+            if (consultandoVencimento && clientesVencimento[usuarioInformado]) {
+                const dataAtual = new Date();
+                const dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
+
+                if (dataAtual > dataVencimento) {
+                    return `A assinatura deste usuário está vencida desde <span id="vencido">${clientesVencimento[usuarioInformado].vencimento}</span>. Caso queira reativar, entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+                } else {
+                    return `A sua assinatura está válida até o dia <span id="ativo">${clientesVencimento[usuarioInformado].vencimento}</span>`;
+                }
             }
+
+ // Se estiver consultando recuperação de senha
+            if (clientes[usuarioInformado]) {
+                let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
+                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://cms.getu9.online/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
+                return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
+            }
+
+            return "✅ Telefone confirmado!";
         } else {
-            return "Nome de usuário desconhecido. Limpe a conversa e atualize a página, e tente novamente, ou entre em contato com o suporte.👉<a href='https://wa.me/5581982258462?text=*Olá, Gostaria de renovar meu usuário*' target='_blank'>Suporte</a>";
+            return "❌ O telefone informado não corresponde ao usuário.";
         }
+    } else {
+        return "❌ Nome de usuário desconhecido. Limpe a conversa e atualize a página, ou entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>";
     }
+}
 
     // Verifica se a palavra-chave para recuperação de senha foi mencionada
     if (userInput.includes("esqueci a senha do painel") || userInput.includes("senha do painel") || userInput.includes("esqueci minha senha de acesso ao painel")) {
@@ -726,6 +319,10 @@ return "Não foi possível encontrar informações de vencimento para este clien
         userInput.includes("tabela de credito")) {
         return "<img src='./img/tabela-revenda.jpg' alt='tabela de preço' class='img-quadrada' />";
     }
+    
+    if (userInput.includes("android") || userInput.includes("panasonic")) {
+    return "Certo. Na sua smartv android, baixe o aplicativo <span style='color: blue;'>ntDown</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
+}
     
     // Saudações
     if (userInput.includes("bom dia")) {
@@ -889,78 +486,12 @@ userInput.includes("esqueci meu usuario e senha")) {
 userInput.includes("teste")) {
         return "Você usa Tvbox, Firestick ou Smartv?";
               
-    } else if (userInput.includes("firestick") || userInput.includes("firestik")) {
-        return "Certo. No seu Firestick baixe o aplicativo, <span style='color: blue;'>Downloader</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>103582</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
-        
     } else if (userInput.includes("android") || userInput.includes("panasonic")) {
         return "Certo. Na sua smartv android, baixe o aplicativo <span style='color: blue;'>ntDown</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
-        
+
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://p88.site</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>LAZER PLAYER</span> abra ele clique em playlist e no código coloque:  <span style='color: red;'>K24bohu5</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
     }        
 
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
 }
-
-// Função para simular o chatbot
-function simularChatbot(mensagemUsuario) {
-    const respostaBot = getBotResponse(mensagemUsuario);
-    document.getElementById("chat-container").innerHTML += `<p>Usuário: ${mensagemUsuario}</p><p>Bot: ${respostaBot}</p>`;
-}
-
-// Função para enviar o formulário para o WhatsApp
-function sendFormToWhatsApp() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var message = document.getElementById("message").value;
-
-    if (username === "" || password === "") {
-        alert("Por favor, preencha todos os campos!");
-        return;
-    }
-
-    // Formata a mensagem que será enviada
-    var whatsappMessage = `*Usuário*: ${username}\n\n*Senha*: ${password}\n\n*Observação*: ${message}`;
-
-    var whatsappNumber = "5581982258462";
-    var url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
-
-    window.location.href = url;
-}
-
-// Função para limpar o chat
-function clearChat() {
-    let output = document.getElementById("output");
-    let messages = output.getElementsByClassName("message");
-    while (messages.length > 0) {
-        messages[0].remove();
-    }
-    localStorage.removeItem("chatMessages");
-}
-
-// Event Listener para limpar o chat
-document.getElementById("clearBtn").addEventListener("click", clearChat);
-// Abrir e fechar o modal do tutorial
-document.addEventListener("DOMContentLoaded", function () {
-    let openBtn = document.getElementById("openTutorialBtn");
-    let modal = document.getElementById("tutorialModal");
-    let closeBtn = document.querySelector(".close");
-
-    if (openBtn && modal && closeBtn) {
-        openBtn.addEventListener("click", function () {
-            modal.style.display = "block";
-        });
-
-        closeBtn.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        window.onclick = function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    } else {
-        console.error("Erro: Elementos do modal não encontrados.");
-    }
-});
