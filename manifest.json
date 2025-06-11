@@ -1,6 +1,6 @@
 {
   "name": "Chatbot de Atendimento",
-  "short_name": "Chatbot",
+  "short_name": "suporte",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
