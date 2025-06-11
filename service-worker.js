@@ -7,6 +7,7 @@ const urlsToCache = [
   "img/chatbot.png",
   "img/logo.png",
   "video/conscienciencia.mp4",
+  "service-worker.js",
   "manifest.json"
 ];
 
