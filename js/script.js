@@ -351,7 +351,7 @@ function getBotResponse(userInput) {
  // Se estiver consultando recuperação de senha
             if (clientes[usuarioInformado]) {
                 let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
-                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://cms.getu9.online/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
+                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://u9cms.getme.skin/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
                 return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
             }
 
@@ -527,7 +527,7 @@ userInput.includes("vendedor")) {
         return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Loja de aplicativos</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
-        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cms.getu9.online/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";        
+        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://u9cms.getme.skin/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";        
                
         } else if (userInput.includes("esqueci a senha") || userInput.includes("senha") ||
 userInput.includes("usuario") ||
