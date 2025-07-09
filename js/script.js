@@ -56,6 +56,13 @@ window.addEventListener("click", function (event) {
     installBtn.style.display = 'none';
   });
 
+
+
+
+
+
+
+
 firebase.database().ref('clientes').once('value')
   .then(snapshot => {
     clientesVencimento = snapshot.val() || {};
@@ -85,11 +92,11 @@ document.getElementById("userInput").addEventListener("keypress", function (e) {
 });
 
 // Função para enviar a mensagem
-async function sendMessage() {
+function sendMessage() {
     let userInput = document.getElementById("userInput").value;
     if (userInput) {
         appendMessage("user-message", userInput);
-        await chatbotResponse(userInput);
+        chatbotResponse(userInput);
         document.getElementById("userInput").value = "";
         saveMessages();
     }
@@ -106,21 +113,15 @@ function appendMessage(className, message) {
 }
 
 // Função para responder com o chatbot
-async function chatbotResponse(userInput) {
+function chatbotResponse(userInput) {
     appendMessage("bot-message", "Escrevendo...");
 
-    let response;
-
-    if (userInput.toLowerCase().includes("jogos de hoje")) {
-        response = await buscarJogosHoje(); // busca API ao vivo
-    } else {
-        response = getBotResponse(userInput); // respostas fixas
-    }
-
-    const messages = document.getElementsByClassName("bot-message");
-    messages[messages.length - 1].innerHTML = response;
-
-    saveMessages();
+    setTimeout(function() {
+        let response = getBotResponse(userInput);
+        let messages = document.getElementsByClassName("bot-message");
+        messages[messages.length - 1].innerHTML = response; // Substitui a mensagem "Escrevendo..."
+        saveMessages();
+    }, 1500); // Delay de 1.5s
 }
 
 // Função para salvar mensagens no localStorage
@@ -308,27 +309,6 @@ function converterData(dataString) {
     return new Date(ano, mes, dia);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Função para definir respostas do chatbot
 function getBotResponse(userInput) {
     userInput = userInput.trim().toLowerCase();
@@ -345,7 +325,7 @@ function getBotResponse(userInput) {
         aguardandoTelefone = true;
         return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. Exemplo: <span style='color: blue;'>5581988776655</span>";
     }
-        
+    
     // 📞 Passo 2: Valida o telefone
     if (aguardandoTelefone) {
     aguardandoTelefone = false;
@@ -483,46 +463,10 @@ userInput.includes("recarregar")) {
         
     } else if (userInput.includes("funciona") || userInput.includes("aparelho") || userInput.includes("aparelhos")) {
         return "Funciona na Smartv-android, tvbox, Firestick, Computador, celular e tablet.";
-} else if (userInput.includes("tudo bem") || userInput.includes("como vai") || userInput.includes("como você está")) {
-    return "Tudo bem, melhor que nunca! 😉";
-}
-
-// Se nada for reconhecido
-return "Desculpe, não entendi sua mensagem. Pode reformular?";
-}
-
-// Função que busca os jogos de hoje na API
-async function buscarJogosHoje() {
-    const dataHoje = new Date().toISOString().split("T")[0];
-    const url = `https://www.thesportsdb.com/api/v1/json/1/eventsday.php?d=${dataHoje}&s=Soccer`;
-
-    try {
-        const resposta = await fetch(url);
-        const dados = await resposta.json();
-
-        if (!dados || !dados.events || dados.events.length === 0) {
-            return "⚽ Nenhum jogo encontrado para hoje.";
-        }
-
-        const jogos = dados.events.slice(0, 5).map(jogo =>
-            `- <strong>${jogo.strEvent}</strong> às <span style='color:green'>${jogo.strTime}</span>`
-        );
-
-        return `⚽ <strong>Jogos principais de hoje:</strong><br><br>${jogos.join("<br>")}`;
-    } catch (err) {
-        console.error("Erro ao buscar jogos:", err);
-        return "❌ Ocorreu um erro ao buscar os jogos de hoje.";
-    }
-}
-
-
-
-
-
-
-
-
-
+        
+    } else if (userInput.includes("tudo bem") || userInput.includes("como vai") || userInput.includes("como você está")) {
+        return "Tudo bem, melhor que nunca! 😉";
+   
     } else if (userInput.includes("tvbox") || userInput.includes("tv box")) {
     return `
     Preencha o nome de usuário e senha da sua preferência para o suporte criar seu teste. Se o teste não for para Tvbox Especifique isso em observação, para qual aparelho vai ser o teste, se é para Tvbox, firestick, Smartv-Lg, Smartv-Samsung, Smartv-Android ou outros. 
@@ -539,7 +483,7 @@ async function buscarJogosHoje() {
         <button type="button" onclick="sendFormToWhatsApp()">Enviar para o Suporte</button>
     </form>`;
  
-} else if (userInput.includes("compativel") || userInput.includes("tv")) {
+} else if (userInput.includes("compatível") || userInput.includes("tv")) {
     return "Nosso serviço é compatível com a maioria das TVs Smart, Tvbox, Firestick, entre outros. Se quiser ter certeza, podemos te passar um teste gratuito de 6 horas.";
         
         } else if (userInput.includes("velocidade") || userInput.includes("minima")) {
@@ -575,7 +519,7 @@ userInput.includes("pagamento")) {
 userInput.includes("parou de funcionar")) {
         return "Vamos te ajudar não se preocupe. Se você usa Tvbox, saia do aplicativo, tire o cabo de Internet do Tvbox, espere uns 10 segundos, coloque o cabo de Internet novamente, abra o aplicativo e faça o teste. Se mesmo assim isso não resolver, entre em contato com nosso suporte. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%20Bruno%2C%20gostaria%20de%20sua%20ajuda%2C%20meus%20canais%20n%C3%A3o%20est%C3%A3o%20funcionando*' target='_blank'>Clique aqui</a>";
         
-        }         else if (userInput.includes("revender") || userInput.includes("revendedor") ||
+        } else if (userInput.includes("revender") || userInput.includes("revendedor") ||
 userInput.includes("vendedor")) {
         return "Olá, temos painel de revenda comum e master. Caso queira ver os valores da nossa tabela de preço so digitar TABELA que te envio. ou se preferir clique no botão para falar com um dos nossos suporte.👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20gostaria%20de%20ser%20revendedor*%20' target='_blank'>Clique aqui</a>";
         
@@ -612,7 +556,7 @@ userInput.includes("teste")) {
 
     } else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://p88.site</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>LAZER PLAYER</span> abra ele clique em playlist e no código coloque:  <span style='color: red;'>K24bohu5</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
-    }     
-    
+    }        
+
     return "Desculpe, não entendi sua pergunta. Pode reformular?";
-    }
+}
