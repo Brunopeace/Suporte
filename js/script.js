@@ -550,11 +550,7 @@ userInput.includes("esqueci meu usuario e senha")) {
     } else if (userInput.includes("iptv") || userInput.includes("canais") ||
 userInput.includes("teste")) {
         return "Você usa Tvbox, Firestick ou Smartv?";
-              
-    } else if (userInput.includes("android") || userInput.includes("panasonic")) {
-        return "Certo. Na sua smartv android, baixe o aplicativo <span style='color: blue;'>ntDown</span> na Playstore, Depois de baixado abra ele e coloque esse código: <span style='color: red;'>95954</span> depois entre em contato com nosso suporte através do WhatsApp, la ele vai te enviar seu usuário e senha para voce adicionar no aplicativo. 👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
-
-    } else if (userInput.includes("samsung") || userInput.includes("lg")) {
+} else if (userInput.includes("samsung") || userInput.includes("lg")) {
         return "Ok. entre na loja de aplicativos e baixe o aplicativo <span style='color: blue;'>IPTV SMARTERS PLAYER</span> abra ele e na primeira opção coloque qualquer nome que quiser. agora coloque este link: <span style='color: red;'>http://p88.site</span> na ultima opção.<br><br> Agora se voce instalou o aplicativo <span style='color: blue;'>LAZER PLAYER</span> abra ele clique em playlist e no código coloque:  <span style='color: red;'>K24bohu5</span> na primeira opção. agora é so entrar em contato com nosso suporte através do WhatsApp, la ele vai te enviar o usuário e senha para voce adicionar no aplicativo. <br>👉<a href='https://wa.me/5581982258462?text=*Ol%C3%A1%2C%20j%C3%A1%20baixei%20o%20aplicativo*' target='_blank'>WhatsApp</a>";
     }        
 
