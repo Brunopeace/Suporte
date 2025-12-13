@@ -351,7 +351,7 @@ function getBotResponse(userInput) {
  // Se estiver consultando recuperação de senha
             if (clientes[usuarioInformado]) {
                 let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
-                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://u9cms.getme.skin/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
+                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://control.cms20.online/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
                 return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
             }
 
