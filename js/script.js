@@ -56,13 +56,6 @@ window.addEventListener("click", function (event) {
     installBtn.style.display = 'none';
   });
 
-
-
-
-
-
-
-
 firebase.database().ref('clientes').once('value')
   .then(snapshot => {
     clientesVencimento = snapshot.val() || {};
@@ -162,7 +155,11 @@ const clientes = {
     },
     "joao20190": { 
         "senha": criptografar("202400"), 
-        "telefone": "5511980778049" 
+        "telefone": "5511980778049"
+    },
+    "alex2019": { 
+        "senha": criptografar("202400"), 
+        "telefone": "5588992638421" 
     },
     "eliezer2019": { 
         "senha": criptografar("202400"), 
