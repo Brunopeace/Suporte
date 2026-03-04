@@ -55,18 +55,17 @@ window.addEventListener("click", function (event) {
     console.log('PWA instalado com sucesso');
     installBtn.style.display = 'none';
   });
-
-firebase.database().ref('clientes').once('value')
-  .then(snapshot => {
+  
+// --- FIREBASE ---
+let meuIdDono = "81982258462";
+firebase.database().ref(`usuarios/${meuIdDono}/clientes`).on('value', snapshot => {
     clientesVencimento = snapshot.val() || {};
     firebasePronto = true;
-    console.log("📦 Clientes carregados:", clientesVencimento);
-  })
-  .catch(error => {
-    console.error("❌ Erro ao carregar Firebase:", error);
-  });
-  
-// Variáveis para armazenar o estado da conversa  
+    console.log("📦 Dados sincronizados");
+});
+ 
+// Variáveis para armazenar o estado da conversa
+
 let firebasePronto = false;
 let clientesVencimento = {};
 let aguardandoUsuario = false;
@@ -297,13 +296,22 @@ function clearChat() {
     localStorage.removeItem("chatMessages"); // Limpa mensagens salvas
 }
 
-// Função para converter uma data no formato dd/mm/yyyy para um objeto Date
+// --- TRATAMENTO DE DATAS ---
+function formatarDataBR(dataISO) {
+    if (!dataISO) return "";
+    if (dataISO.includes('/')) return dataISO;
+    const data = new Date(dataISO);
+    return `${String(data.getUTCDate()).padStart(2, '0')}/${String(data.getUTCMonth() + 1).padStart(2, '0')}/${data.getUTCFullYear()}`;
+}
+
 function converterData(dataString) {
-    const partes = dataString.split('/');
-    const dia = parseInt(partes[0], 10);
-    const mes = parseInt(partes[1], 10) - 1; // Os meses em JavaScript são indexados de 0 a 11
-    const ano = parseInt(partes[2], 10);
-    return new Date(ano, mes, dia);
+    if (!dataString) return new Date();
+    if (dataString.includes('-') || dataString.includes('T')) return new Date(dataString);
+    if (dataString.includes('/')) {
+        const partes = dataString.split('/');
+        return new Date(partes[2], partes[1] - 1, partes[0]);
+    }
+    return new Date(dataString);
 }
 
 // Função para definir respostas do chatbot
@@ -333,17 +341,21 @@ function getBotResponse(userInput) {
         const telefoneFirebase = cliente.telefone.startsWith("55") ? cliente.telefone : "55" + cliente.telefone;
 
         if (telefoneFirebase === userInput) {
-            // Se estiver consultando vencimento
+            // Se estiver consultando vencimento            
             if (consultandoVencimento && clientesVencimento[usuarioInformado]) {
-                const dataAtual = new Date();
-                const dataVencimento = converterData(clientesVencimento[usuarioInformado].vencimento);
+    const dataAtual = new Date();
+    const dataBruta = clientesVencimento[usuarioInformado].vencimento; // Pega a data original (ISO)
+    const dataVencimento = converterData(dataBruta);
+    
+    // AQUI ESTÁ A MUDANÇA: Usamos a função para formatar antes de exibir
+    const dataFormatada = formatarDataBR(dataBruta);
 
-                if (dataAtual > dataVencimento) {
-                    return `A assinatura deste usuário está vencida desde <span id="vencido">${clientesVencimento[usuarioInformado].vencimento}</span>. Caso queira reativar, entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
-                } else {
-                    return `A sua assinatura está válida até o dia <span id="ativo">${clientesVencimento[usuarioInformado].vencimento}</span>`;
-                }
-            }
+    if (dataAtual > dataVencimento) {
+        return `A sua assinatura está vencida desde <span id="vencido">${dataFormatada}</span>. Caso queira reativar, entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+    } else {
+        return `A sua assinatura está válida até o dia <span id="ativo">${dataFormatada}</span> ✅`;
+    }
+}
 
  // Se estiver consultando recuperação de senha
             if (clientes[usuarioInformado]) {
