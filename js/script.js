@@ -330,49 +330,70 @@ function getBotResponse(userInput) {
         aguardandoTelefone = true;
         return "Agora informe o número do telefone associado a este usuário com o código do país na frente 55. Exemplo: <span style='color: blue;'>5581988776655</span>";
     }
-    
+        
     // 📞 Passo 2: Valida o telefone
-    if (aguardandoTelefone) {
+if (aguardandoTelefone) {
     aguardandoTelefone = false;
 
+    // Busca o cliente tanto no banco fixo quanto no Firebase
     let cliente = clientes[usuarioInformado] || clientesVencimento[usuarioInformado];
 
     if (cliente) {
-        const telefoneFirebase = cliente.telefone.startsWith("55") ? cliente.telefone : "55" + cliente.telefone;
+        // Normaliza o telefone para garantir que comece com 55 e contenha apenas números
+        let telBanco = String(cliente.telefone).replace(/\D/g, '');
+        if (!telBanco.startsWith("55")) telBanco = "55" + telBanco;
+        
+        let telDigitado = userInput.replace(/\D/g, '');
+        if (!telDigitado.startsWith("55")) telDigitado = "55" + telDigitado;
 
-        if (telefoneFirebase === userInput) {
-            // Se estiver consultando vencimento            
-            if (consultandoVencimento && clientesVencimento[usuarioInformado]) {
-    const dataAtual = new Date();
-    const dataBruta = clientesVencimento[usuarioInformado].vencimento; // Pega a data original (ISO)
-    const dataVencimento = converterData(dataBruta);
-    
-    // AQUI ESTÁ A MUDANÇA: Usamos a função para formatar antes de exibir
-    const dataFormatada = formatarDataBR(dataBruta);
+        if (telBanco === telDigitado) {
+            
+            // --- CENÁRIO A: CONSULTA DE VENCIMENTO ---
+            if (consultandoVencimento) {
+                const dataBruta = cliente.vencimento || cliente.data;
+                if (!dataBruta) return "⚠️ Não encontrei uma data cadastrada para este usuário.";
 
-    if (dataAtual > dataVencimento) {
-        return `A sua assinatura está vencida desde <span id="vencido">${dataFormatada}</span>. Caso queira reativar, entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
-    } else {
-        return `A sua assinatura está válida até o dia <span id="ativo">${dataFormatada}</span> ✅`;
-    }
-}
+                const dataVencimento = converterData(dataBruta);
+                const dataFormatada = formatarDataBR(dataBruta); // Exibe como 05/03/2026
+                const dataAtual = new Date();
 
- // Se estiver consultando recuperação de senha
+                if (dataAtual > dataVencimento) {
+                    return `A sua assinatura está vencida desde <span id="vencido">${dataFormatada}</span>. Caso queira reativar, entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>`;
+                } else {
+                    return `A sua assinatura está válida até o dia <span id="ativo">${dataFormatada}</span> ✅`;
+                }
+            }
+
+            // --- CENÁRIO B: RECUPERAÇÃO DE SENHA (WhatsApp Organizado) ---
             if (clientes[usuarioInformado]) {
                 let senhaDescriptografada = descriptografar(clientes[usuarioInformado].senha);
-                let whatsappLink = `https://wa.me/${telefoneFirebase}?text=Link%20de%20acesso%20ao%20painel:%20https://control.cms20.online/%0A%0AUsuário:%20${usuarioInformado}%0A%0ASenha:%20${senhaDescriptografada}`;
-                return `Tudo certo. Clique no link para receber seu usuário e senha via WhatsApp: <br>👉<a href='${whatsappLink}' target='_blank'>Receber usuário e senha</a>`;
+                
+                // Monta a mensagem com negritos (*) e quebras de linha (%0A)
+                let mensagemOrganizada = encodeURIComponent(
+                    `*DADOS DE ACESSO AO PAINEL*\n` +
+                    `----------------------------------\n\n` +
+                    `*Link do Painel:*\nhttps://cmspanel.cms20.online/union/login\n\n` +
+                    `*Usuário:* ${usuarioInformado}\n` +
+                    `*Senha:* ${senhaDescriptografada}\n\n` +
+                    `----------------------------------\n` +
+                    `_Guarde esses dados com segurança!_`
+                );
+
+                let whatsappLink = `https://wa.me/${telBanco}?text=${mensagemOrganizada}`;
+                
+                return `Tudo certo! Clique no botão abaixo para receber seus dados organizados no WhatsApp: <br><br>` +
+                       `👉 <a href='${whatsappLink}' target='_blank' style='background-color: #25D366; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;'>Receber Usuário e Senha</a>`;
             }
 
             return "✅ Telefone confirmado!";
         } else {
-            return "❌ O telefone informado não corresponde ao usuário.";
+            return "❌ O telefone informado não corresponde ao usuário registrado.";
         }
     } else {
-        return "❌ Nome de usuário desconhecido. Limpe a conversa e atualize a página, ou entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, gostaria de renovar meu usuário*' target='_blank'>Suporte</a>";
+        return "❌ Nome de usuário desconhecido. Limpe a conversa ou entre em contato com o suporte: 👉 <a href='https://wa.me/5581982258462?text=*Olá, não consegui validar meu usuário*' target='_blank'>Suporte</a>";
     }
 }
-
+    
     // Verifica se a palavra-chave para recuperação de senha foi mencionada
     if (userInput.includes("esqueci a senha do painel") || userInput.includes("senha do painel") || userInput.includes("esqueci minha senha de acesso ao painel")) {
         aguardandoUsuario = true;
@@ -536,7 +557,7 @@ userInput.includes("vendedor")) {
         return "Aqui você encontra todos os Nossos aplicativos para smartv, tvbox, Firestick, Computador, tablet e celular. <br> 👉<a href='https://brunopeace.github.io/Paineldeapps/' target='_blank'>Loja de aplicativos</a>";
         
         } else if (userInput.includes("link de acesso ao painel") || userInput.includes("link do painel")) {
-        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://control.cms20.online/</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";        
+        return "Aqui está seu link de acesso ao seu painel. 👉 <span style='color: blue;'>https://cmspanel.cms20.online/union/login</span><br><img src='./img/painel.jpg' alt='tabela de preço' class='img-painel' />";        
                
         } else if (userInput.includes("esqueci a senha") || userInput.includes("senha") ||
 userInput.includes("usuario") ||
